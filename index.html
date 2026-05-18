@@ -6,8 +6,56 @@
   <meta name="robots" content="index, follow" />
   <meta name="description" content="臨済宗南禅寺派 兜率山 西笑院。応永10年（1403）ないしは明徳4年（1393）の開創と伝わる、東京都八王子市山田町の禅寺です。お墓・永代供養・墓地分譲・法要・葬儀のご案内。" />
   <meta name="keywords" content="西笑院, さいしょういん, 八王子 寺, 臨済宗, 南禅寺派, 廣園寺, 永代供養, 墓地, 山田町, 坐禅会, 八王子 お墓" />
-  <link rel="canonical" href="https://saisyouin.jp/" />
+  <link rel="canonical" href="https://seishouin.jp/" />
   <title>兜率山 西笑院 | 臨済宗南禅寺派 廣園寺塔頭</title>
+
+  <!-- ファビコン -->
+  <link rel="icon" type="image/png" href="c16.png" />
+  <link rel="apple-touch-icon" href="c16.png" />
+
+  <!-- OGP（LINE・SNS シェア用） -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://seishouin.jp/" />
+  <meta property="og:title"       content="兜率山 西笑院 | 臨済宗南禅寺派 廣園寺塔頭" />
+  <meta property="og:description" content="臨済宗南禅寺派 兜率山 西笑院。応永10年（1403）ないしは明徳4年（1393）の開創と伝わる、東京都八王子市山田町の禅寺です。お墓・永代供養・法要・葬儀のご案内。" />
+  <meta property="og:image"       content="https://seishouin.jp/seishouin-home.jpg" />
+  <meta property="og:locale"      content="ja_JP" />
+  <meta property="og:site_name"   content="兜率山 西笑院" />
+  <meta name="twitter:card"       content="summary_large_image" />
+
+  <!-- 構造化データ（Google検索向け） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BuddhistTemple",
+    "name": "兜率山 西笑院",
+    "alternateName": ["西笑院", "せいしょういん", "Seisho-in"],
+    "description": "臨済宗南禅寺派 兜率山 西笑院。応永10年（1403）ないしは明徳4年（1393）の開創と伝わる禅寺です。お墓・永代供養・法要・葬儀のご相談を承ります。",
+    "url": "https://seishouin.jp",
+    "telephone": "+81-42-661-7310",
+    "faxNumber": "+81-42-661-7332",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "山田町1560",
+      "addressLocality": "八王子市",
+      "addressRegion": "東京都",
+      "postalCode": "193-0933",
+      "addressCountry": "JP"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 35.646622,
+      "longitude": 139.31445
+    },
+    "image": "https://seishouin.jp/seishouin-home.jpg",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;600;800&display=swap" rel="stylesheet">
@@ -954,15 +1002,16 @@
   // ===== ヒーロー背景をランダムに切り替え =====
   (function() {
     var imgs = [
-      { src: 'seishouin-home.jpg', pos: 'center' },
-      { src: 'home3.jpg',    pos: 'center' },
-      { src: 'home6.png',    pos: '90% center' }
+      { src: 'seishouin-home.jpg', pos: 'center',     mobilePos: 'center' },
+      { src: 'home3.jpg',          pos: 'center',     mobilePos: 'center' },
+      { src: 'home6.png',          pos: '90% center', mobilePos: '15% center' }
     ];
+    var isMobile = window.innerWidth < 768;
     var item = imgs[Math.floor(Math.random() * imgs.length)];
     var bg = document.querySelector('.hero-bg');
     bg.style.background = "linear-gradient(160deg,rgba(10,10,10,.55) 0%,rgba(10,10,10,.25) 60%,rgba(10,10,10,.5) 100%),url('" + item.src + "')";
     bg.style.backgroundSize = 'cover';
-    bg.style.backgroundPosition = item.pos;
+    bg.style.backgroundPosition = isMobile ? item.mobilePos : item.pos;
   })();
 
   // ===== ハンバーガーメニュー =====
