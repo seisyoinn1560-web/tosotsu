@@ -174,20 +174,36 @@
     @media (max-width: 768px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
     @media (max-width: 480px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
 
-    /* ===== 境内案内（ギャラリー） ===== */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      grid-template-rows: 220px 220px;
+    /* ===== 境内案内（横スクロールギャラリー） ===== */
+    .gallery-scroll-wrap { position: relative; }
+    .gallery-scroll {
+      display: flex;
       gap: .6rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: .4rem;
     }
-    .gallery-item { overflow: hidden; border-radius: 2px; cursor: pointer; }
+    .gallery-scroll::-webkit-scrollbar { height: 4px; }
+    .gallery-scroll::-webkit-scrollbar-track { background: #f0ede8; }
+    .gallery-scroll::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+    .gallery-item { flex: 0 0 360px; height: 260px; scroll-snap-align: start; overflow: hidden; border-radius: 2px; cursor: pointer; }
     .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
     .gallery-item:hover img { transform: scale(1.04); }
-    .gallery-item.large { grid-row: 1 / 3; }
+    .gallery-arrow {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(255,255,255,.88); border: none; color: var(--ink);
+      font-size: 1.6rem; width: 44px; height: 44px; border-radius: 50%;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,.15); transition: background .2s; z-index: 2;
+    }
+    .gallery-arrow:hover { background: #fff; }
+    .gallery-arrow.prev { left: -18px; }
+    .gallery-arrow.next { right: -18px; }
     @media (max-width: 640px) {
-      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-      .gallery-item.large { grid-row: auto; }
+      .gallery-item { flex: 0 0 78vw; height: 220px; }
+      .gallery-arrow { display: none; }
     }
 
     /* ===== 歴史 ===== */
@@ -579,22 +595,26 @@
       <div class="section-line"></div>
       <p class="section-lead">緑豊かな境内で、心静かに手を合わせる場所</p>
     </div>
-    <div class="gallery-grid fade">
-      <div class="gallery-item large">
-        <img src="seishouin-home.jpg" alt="西笑院 境内" loading="lazy" onclick="openLightbox(0)">
+    <div class="gallery-scroll-wrap fade">
+      <button class="gallery-arrow prev" onclick="scrollGallery(-1)" aria-label="前へ">&#8249;</button>
+      <div class="gallery-scroll" id="galleryScroll">
+        <div class="gallery-item">
+          <img src="seishouin-home.jpg" alt="西笑院 境内" loading="lazy" onclick="openLightbox(0)">
+        </div>
+        <div class="gallery-item">
+          <img src="home3.jpg" alt="西笑院 本堂" loading="lazy" onclick="openLightbox(1)">
+        </div>
+        <div class="gallery-item">
+          <img src="home6.png" alt="西笑院 境内" loading="lazy" onclick="openLightbox(2)">
+        </div>
+        <div class="gallery-item">
+          <img src="kunpu.jpeg" alt="永代供養塔 薫風" loading="lazy" onclick="openLightbox(3)">
+        </div>
+        <div class="gallery-item">
+          <img src="sekihi.jpeg" alt="西笑院 石碑" loading="lazy" onclick="openLightbox(4)">
+        </div>
       </div>
-      <div class="gallery-item">
-        <img src="home3.jpg" alt="西笑院 本堂" loading="lazy" onclick="openLightbox(1)">
-      </div>
-      <div class="gallery-item">
-        <img src="home6.png" alt="西笑院 境内" loading="lazy" onclick="openLightbox(2)">
-      </div>
-      <div class="gallery-item">
-        <img src="kunpu.jpeg" alt="永代供養塔 薫風" loading="lazy" onclick="openLightbox(3)">
-      </div>
-      <div class="gallery-item">
-        <img src="sekihi.jpeg" alt="西笑院 石碑" loading="lazy" onclick="openLightbox(4)">
-      </div>
+      <button class="gallery-arrow next" onclick="scrollGallery(1)" aria-label="次へ">&#8250;</button>
     </div>
   </div>
 </section>
@@ -873,7 +893,10 @@
   const lightboxClose = document.getElementById('lightboxClose');
   const lightboxPrev  = document.getElementById('lightboxPrev');
   const lightboxNext  = document.getElementById('lightboxNext');
-  const galleryImgs   = Array.from(document.querySelectorAll('.gallery-grid .gallery-item img'));
+  const galleryImgs   = Array.from(document.querySelectorAll('.gallery-scroll .gallery-item img'));
+  function scrollGallery(dir) {
+    document.getElementById('galleryScroll').scrollBy({ left: dir * 380, behavior: 'smooth' });
+  }
   let currentIdx = 0;
   function openLightbox(idx) {
     if (typeof idx === 'number') {
