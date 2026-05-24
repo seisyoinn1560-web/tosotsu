@@ -254,12 +254,6 @@
     .tab-btn:hover { color: var(--gold); }
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
-    .subtab-nav { display: flex; border-bottom: 1px solid var(--border); margin: 0 0 2rem; gap: .5rem; }
-    .subtab-btn { padding: .65rem 1.4rem; font-size: .82rem; letter-spacing: .12em; color: var(--muted); border: none; background: none; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color .2s, border-color .2s; font-family: inherit; white-space: nowrap; }
-    .subtab-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
-    .subtab-btn:hover { color: var(--gold); }
-    .subtab-panel { display: none; }
-    .subtab-panel.active { display: block; }
     .kuyo-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 1.5rem; margin-top: 2rem; }
     .kuyo-card { background: var(--white); border: 1px solid var(--border); padding: 1.8rem 1.5rem; border-radius: 2px; text-align: center; }
     .kuyo-icon { font-size: 2rem; margin-bottom: .8rem; }
@@ -714,52 +708,42 @@
       <div class="section-line"></div>
     </div>
     <div class="tab-nav fade" role="tablist">
-      <button class="tab-btn active" role="tab" data-tab="inochi">永代供養区画「祈りの聖地」</button>
+      <button class="tab-btn active" role="tab" data-tab="jumoku">樹木葬</button>
+      <button class="tab-btn" role="tab" data-tab="eitai">永代供養「薫風」</button>
       <button class="tab-btn" role="tab" data-tab="bochi">墓地について</button>
       <button class="tab-btn" role="tab" data-tab="hoyo">法要・葬儀</button>
     </div>
-    <!-- 永代供養区画「祈りの聖地」 -->
-    <div class="tab-panel active" id="tab-inochi">
-      <div style="text-align:center;margin-bottom:1.5rem;">
-        <img src="IMG_4219.jpeg" alt="永代供養区画 祈りの聖地" style="max-width:100%;max-height:420px;object-fit:cover;border-radius:2px;">
+    <!-- 樹木葬 -->
+    <div class="tab-panel active" id="tab-jumoku">
+      <p style="text-align:center;color:var(--muted);font-size:1rem;margin-bottom:2rem;">自然の中で眠る、新しいかたちのご供養です。<br>西笑院では樹木葬墓地をご用意しております。</p>
+      <div style="text-align:center;margin-bottom:2rem;">
+        <img src="境内案内掲載写真/IMG_5432.jpeg" alt="西笑院 樹木葬" style="max-width:100%;max-height:420px;object-fit:cover;border-radius:2px;">
       </div>
-      <p style="text-align:center;font-size:1rem;letter-spacing:.15em;color:var(--gold);margin-bottom:2rem;">永代供養区画「祈りの聖地」</p>
-      <div class="subtab-nav" role="tablist">
-        <button class="subtab-btn active" role="tab" data-subtab="jumoku">樹木葬</button>
-        <button class="subtab-btn" role="tab" data-subtab="eitai">薫風</button>
+      <div class="kuyo-grid">
+        <div class="kuyo-card"><div class="kuyo-icon">🌳</div><h4>樹木葬とは</h4><p>墓石の代わりに樹木を墓標とするお墓のかたちです。自然に還るやすらかなご供養として近年多くの方に選ばれています。</p></div>
+        <div class="kuyo-card"><div class="kuyo-icon">👨‍👩‍👧</div><h4>継承者がいなくても安心</h4><p>後継ぎがいない方や、管理の負担を軽減したい方にも安心してご利用いただけます。</p></div>
+        <div class="kuyo-card"><div class="kuyo-icon">📋</div><h4>見学・ご相談</h4><p>現地見学や詳細のご案内は随時承っております。お気軽にお問い合わせください。</p></div>
       </div>
-      <!-- 樹木葬 -->
-      <div class="subtab-panel active" id="subtab-jumoku">
-        <p style="text-align:center;color:var(--muted);font-size:1rem;margin-bottom:2rem;">自然の中で眠る、新しいかたちのご供養です。<br>西笑院では樹木葬墓地をご用意しております。</p>
-        <div style="text-align:center;margin-bottom:2rem;">
-          <img src="境内案内掲載写真/IMG_5432.jpeg" alt="西笑院 樹木葬" style="max-width:100%;max-height:420px;object-fit:cover;border-radius:2px;">
-        </div>
-        <div class="kuyo-grid">
-          <div class="kuyo-card"><div class="kuyo-icon">🌳</div><h4>樹木葬とは</h4><p>墓石の代わりに樹木を墓標とするお墓のかたちです。自然に還るやすらかなご供養として近年多くの方に選ばれています。</p></div>
-          <div class="kuyo-card"><div class="kuyo-icon">👨‍👩‍👧</div><h4>継承者がいなくても安心</h4><p>後継ぎがいない方や、管理の負担を軽減したい方にも安心してご利用いただけます。</p></div>
-          <div class="kuyo-card"><div class="kuyo-icon">📋</div><h4>見学・ご相談</h4><p>現地見学や詳細のご案内は随時承っております。お気軽にお問い合わせください。</p></div>
-        </div>
-        <div style="text-align:center;margin-top:2.5rem;">
-          <a href="https://www.im-jumokuso.com/place/2623" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:.8rem 2.5rem;background:var(--gold);color:#fff;font-size:.82rem;letter-spacing:.2em;border-radius:2px;transition:background .25s;">樹木葬の詳細・資料請求はこちら</a>
-          <p style="font-size:.72rem;color:var(--muted);margin-top:.8rem;">外部サイト（アイエム株式会社）へ移動します</p>
-        </div>
+      <div style="text-align:center;margin-top:2.5rem;">
+        <a href="https://www.im-jumokuso.com/place/2623" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:.8rem 2.5rem;background:var(--gold);color:#fff;font-size:.82rem;letter-spacing:.2em;border-radius:2px;transition:background .25s;">樹木葬の詳細・資料請求はこちら</a>
+        <p style="font-size:.72rem;color:var(--muted);margin-top:.8rem;">外部サイト（アイエム株式会社）へ移動します</p>
       </div>
-      <!-- 薫風 -->
-      <div class="subtab-panel" id="subtab-eitai">
-        <div style="text-align:center;color:var(--muted);font-size:.92rem;margin-bottom:2.5rem;">
-          <p style="font-size:1rem;letter-spacing:.15em;color:var(--gold);margin-bottom:.6rem;">永代供養塔「薫風」</p>
-          <p>後継者がいない方や遠方にお住まいの方のために、<br>当院が永代にわたり丁寧に供養を続ける永代供養塔です。<br>春秋彼岸・お盆には読経の上、御供養申し上げます。</p>
-        </div>
-        <div class="photo-grid fade">
-          <img src="kunpu.jpeg" alt="永代供養塔 薫風" onclick="openLightbox(this.src)">
-          <img src="kunpu2.jpeg" alt="永代供養塔 薫風" onclick="openLightbox(this.src)">
-        </div>
-        <div class="eitai-grid">
-          <div class="eitai-card"><h4>合祀</h4><div class="fee-list"><div class="fee-item"><span class="fee-label">志納金（御一霊）</span><span class="fee-price">25万円</span></div><div class="fee-item"><span class="fee-label" style="font-size:.75rem;">うち永代供養料</span><span class="fee-free">10万円含む</span></div><div class="fee-item"><span class="fee-label">彫刻料</span><span class="fee-price">3万円</span></div><div class="fee-item"><span class="fee-label">納骨料</span><span class="fee-price">2万円</span></div><div class="fee-item"><span class="fee-label">二霊目以降（一霊につき）</span><span class="fee-price">10万円</span></div></div><p class="fee-note">お遺骨を骨壺から布に包み、中央カロートに合祀いたします。</p></div>
-          <div class="eitai-card"><h4>骨壺安置</h4><div class="fee-list"><div class="fee-item"><span class="fee-label">志納金（御一霊）</span><span class="fee-price">30万円</span></div><div class="fee-item"><span class="fee-label" style="font-size:.75rem;">うち永代供養料</span><span class="fee-free">10万円含む</span></div><div class="fee-item"><span class="fee-label">彫刻料</span><span class="fee-price">3万円</span></div><div class="fee-item"><span class="fee-label">納骨料</span><span class="fee-price">2万円</span></div><div class="fee-item"><span class="fee-label">二霊目以降（一霊につき）</span><span class="fee-price">15万円</span></div></div><p class="fee-note">13回忌まで骨壺のままお預かり。延長・既に13回忌を過ぎている場合もご相談ください。</p></div>
-        </div>
-        <div class="kuyo-note" style="margin-top:1.5rem;"><p style="font-size:.82rem;color:var(--muted);line-height:2;">・年忌法要・命日の塔婆建立等のご供養も承ります。<br>・後継者がいない場合も、春秋彼岸・お盆には読経の上、御供養申し上げます。<br>・生前予約もご相談ください。<br>・戒名授与も承ります。</p></div>
+    </div>
+    <!-- 永代供養 -->
+    <div class="tab-panel" id="tab-eitai">
+      <div style="text-align:center;color:var(--muted);font-size:.92rem;margin-bottom:2.5rem;">
+        <p style="font-size:1rem;letter-spacing:.15em;color:var(--gold);margin-bottom:.6rem;">永代供養塔「薫風」</p>
+        <p>後継者がいない方や遠方にお住まいの方のために、<br>当院が永代にわたり丁寧に供養を続ける永代供養塔です。<br>春秋彼岸・お盆には読経の上、御供養申し上げます。</p>
       </div>
+      <div class="photo-grid fade">
+        <img src="kunpu.jpeg" alt="永代供養塔 薫風" onclick="openLightbox(this.src)">
+        <img src="kunpu2.jpeg" alt="永代供養塔 薫風" onclick="openLightbox(this.src)">
+      </div>
+      <div class="eitai-grid">
+        <div class="eitai-card"><h4>合祀</h4><div class="fee-list"><div class="fee-item"><span class="fee-label">志納金（御一霊）</span><span class="fee-price">25万円</span></div><div class="fee-item"><span class="fee-label" style="font-size:.75rem;">うち永代供養料</span><span class="fee-free">10万円含む</span></div><div class="fee-item"><span class="fee-label">彫刻料</span><span class="fee-price">3万円</span></div><div class="fee-item"><span class="fee-label">納骨料</span><span class="fee-price">2万円</span></div><div class="fee-item"><span class="fee-label">二霊目以降（一霊につき）</span><span class="fee-price">10万円</span></div></div><p class="fee-note">お遺骨を骨壺から布に包み、中央カロートに合祀いたします。</p></div>
+        <div class="eitai-card"><h4>骨壺安置</h4><div class="fee-list"><div class="fee-item"><span class="fee-label">志納金（御一霊）</span><span class="fee-price">30万円</span></div><div class="fee-item"><span class="fee-label" style="font-size:.75rem;">うち永代供養料</span><span class="fee-free">10万円含む</span></div><div class="fee-item"><span class="fee-label">彫刻料</span><span class="fee-price">3万円</span></div><div class="fee-item"><span class="fee-label">納骨料</span><span class="fee-price">2万円</span></div><div class="fee-item"><span class="fee-label">二霊目以降（一霊につき）</span><span class="fee-price">15万円</span></div></div><p class="fee-note">13回忌まで骨壺のままお預かり。延長・既に13回忌を過ぎている場合もご相談ください。</p></div>
+      </div>
+      <div class="kuyo-note" style="margin-top:1.5rem;"><p style="font-size:.82rem;color:var(--muted);line-height:2;">・年忌法要・命日の塔婆建立等のご供養も承ります。<br>・後継者がいない場合も、春秋彼岸・お盆には読経の上、御供養申し上げます。<br>・生前予約もご相談ください。<br>・戒名授与も承ります。</p></div>
     </div>
     <!-- 墓地 -->
     <div class="tab-panel" id="tab-bochi">
@@ -904,8 +888,8 @@
       </div>
       <div class="footer-col">
         <h4>ご供養・お墓</h4>
-        <a href="#kuyo" onclick="switchTab('inochi');switchSubTab('jumoku')">樹木葬</a>
-        <a href="#kuyo" onclick="switchTab('inochi');switchSubTab('eitai')">永代供養「薫風」</a>
+        <a href="#kuyo" onclick="switchTab('jumoku')">樹木葬</a>
+        <a href="#kuyo" onclick="switchTab('eitai')">永代供養「薫風」</a>
         <a href="#kuyo" onclick="switchTab('bochi')">墓地・お墓</a>
         <a href="#kuyo" onclick="switchTab('hoyo')">法要・葬儀</a>
       </div>
@@ -1039,14 +1023,6 @@
   }
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => switchTab(btn.dataset.tab));
-  });
-  function switchSubTab(subTabName) {
-    const panel = document.getElementById('tab-inochi');
-    panel.querySelectorAll('.subtab-btn').forEach(b => { b.classList.toggle('active', b.dataset.subtab === subTabName); });
-    panel.querySelectorAll('.subtab-panel').forEach(p => { p.classList.toggle('active', p.id === 'subtab-' + subTabName); });
-  }
-  document.querySelectorAll('.subtab-btn').forEach(btn => {
-    btn.addEventListener('click', () => switchSubTab(btn.dataset.subtab));
   });
 
   // フェードイン
