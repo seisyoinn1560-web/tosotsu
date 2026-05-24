@@ -189,6 +189,10 @@
     .gallery-scroll::-webkit-scrollbar-track { background: #f0ede8; }
     .gallery-scroll::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
     .gallery-item { flex: 0 0 360px; height: 260px; scroll-snap-align: start; overflow: hidden; border-radius: 2px; cursor: pointer; }
+    .gallery-item-sm { flex: 0 0 210px; height: 260px; scroll-snap-align: start; overflow: hidden; border-radius: 2px; cursor: pointer; }
+    .gallery-item-sm img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .gallery-item-sm:hover img { transform: scale(1.04); }
+    @media (max-width: 640px) { .gallery-item-sm { flex: 0 0 52vw; height: 180px; } }
     .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
     .gallery-item:hover img { transform: scale(1.04); }
     .gallery-arrow {
@@ -603,68 +607,71 @@
     <div class="gallery-scroll-wrap fade">
       <button class="gallery-arrow prev" onclick="scrollGallery(-1)" aria-label="前へ">&#8249;</button>
       <div class="gallery-scroll" id="galleryScroll">
+        <!-- 本堂系 -->
         <div class="gallery-item">
-          <img src="seishouin-home.jpg" alt="西笑院 境内" data-caption="当院墓地上段から見えるダイヤモンド富士" loading="lazy" onclick="openLightbox(0)">
+          <img src="home6.png" alt="西笑院 本堂" data-caption="本堂" loading="lazy" onclick="openLightbox(0)">
         </div>
         <div class="gallery-item">
           <img src="home3.jpg" alt="西笑院 本堂" data-caption="家紋「一文字に三つ星」の入った瓦屋根" loading="lazy" onclick="openLightbox(1)">
         </div>
         <div class="gallery-item">
-          <img src="home6.png" alt="西笑院 境内" data-caption="本堂" loading="lazy" onclick="openLightbox(2)">
+          <img src="境内案内掲載写真/IMG_2507.jpeg" alt="西笑院 本堂" data-caption="" loading="lazy" onclick="openLightbox(2)">
         </div>
         <div class="gallery-item">
-          <img src="kunpu.jpeg" alt="永代供養塔 薫風" data-caption="永代供養「薫風」" loading="lazy" onclick="openLightbox(3)">
+          <img src="境内案内掲載写真/IMG_4775.jpeg" alt="西笑院 本堂" data-caption="" loading="lazy" onclick="openLightbox(3)">
         </div>
         <div class="gallery-item">
-          <img src="sekihi.jpeg" alt="西笑院 石碑" data-caption="開創600年記念碑" loading="lazy" onclick="openLightbox(4)">
+          <img src="境内案内掲載写真/IMG_2517.jpeg" alt="西笑院 本堂" data-caption="" loading="lazy" onclick="openLightbox(4)">
+        </div>
+        <!-- その他 -->
+        <div class="gallery-item">
+          <img src="kunpu.jpeg" alt="永代供養塔 薫風" data-caption="永代供養「薫風」" loading="lazy" onclick="openLightbox(5)">
         </div>
         <div class="gallery-item">
-          <img src="IMG_3907.jpeg" alt="西笑院 境内" data-caption="木彫りの達磨大師" loading="lazy" onclick="openLightbox(5)">
+          <img src="sekihi.jpeg" alt="西笑院 石碑" data-caption="開創600年記念碑" loading="lazy" onclick="openLightbox(6)">
         </div>
         <div class="gallery-item">
-          <img src="境内案内掲載写真/IMG_0469.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(6)">
+          <img src="IMG_3907.jpeg" alt="西笑院 境内" data-caption="木彫りの達磨大師" loading="lazy" onclick="openLightbox(7)">
         </div>
         <div class="gallery-item">
-          <img src="境内案内掲載写真/IMG_2507.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(7)">
+          <img src="境内案内掲載写真/IMG_0469.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(8)">
         </div>
         <div class="gallery-item">
-          <img src="境内案内掲載写真/IMG_3639.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(8)">
+          <img src="境内案内掲載写真/IMG_4192.JPG" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(9)">
         </div>
         <div class="gallery-item">
-          <img src="境内案内掲載写真/IMG_3929.JPG" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(9)">
+          <img src="境内案内掲載写真/IMG_9222.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(10)">
         </div>
         <div class="gallery-item">
-          <img src="境内案内掲載写真/IMG_4192.JPG" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(10)">
+          <img src="境内案内掲載写真/IMG_4330.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(11)">
         </div>
         <div class="gallery-item">
-          <img src="境内案内掲載写真/IMG_9222.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(11)">
+          <img src="境内案内掲載写真/IMG_4234.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(12)">
         </div>
         <div class="gallery-item">
-          <img src="境内案内掲載写真/IMG_4330.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(12)">
+          <img src="境内案内掲載写真/IMG_5432.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(13)">
         </div>
         <div class="gallery-item">
-          <img src="境内案内掲載写真/IMG_4234.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(13)">
+          <img src="境内案内掲載写真/IMG_9218.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(14)">
         </div>
         <div class="gallery-item">
-          <img src="境内案内掲載写真/IMG_5432.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(14)">
+          <img src="境内案内掲載写真/IMG_9232.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(15)">
         </div>
         <div class="gallery-item">
-          <img src="境内案内掲載写真/IMG_9218.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(15)">
+          <img src="境内案内掲載写真/IMG_5517.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(16)">
         </div>
         <div class="gallery-item">
-          <img src="境内案内掲載写真/IMG_9232.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(16)">
+          <img src="境内案内掲載写真/IMG_4356.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(17)">
         </div>
-        <div class="gallery-item">
-          <img src="境内案内掲載写真/IMG_5517.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(17)">
+        <!-- 富士山3枚（横並び） -->
+        <div class="gallery-item-sm">
+          <img src="seishouin-home.jpg" alt="西笑院 境内" data-caption="当院墓地上段から見えるダイヤモンド富士" loading="lazy" onclick="openLightbox(18)">
         </div>
-        <div class="gallery-item">
-          <img src="境内案内掲載写真/IMG_4775.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(18)">
+        <div class="gallery-item-sm">
+          <img src="境内案内掲載写真/IMG_3929.JPG" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(19)">
         </div>
-        <div class="gallery-item">
-          <img src="境内案内掲載写真/IMG_4356.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(19)">
-        </div>
-        <div class="gallery-item">
-          <img src="境内案内掲載写真/IMG_2517.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(20)">
+        <div class="gallery-item-sm">
+          <img src="境内案内掲載写真/IMG_3639.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(20)">
         </div>
       </div>
       <button class="gallery-arrow next" onclick="scrollGallery(1)" aria-label="次へ">&#8250;</button>
