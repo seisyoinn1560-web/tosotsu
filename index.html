@@ -230,7 +230,9 @@
     /* ライトボックス */
     .lightbox { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,.88); align-items: center; justify-content: center; }
     .lightbox.open { display: flex; }
-    .lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 2px; }
+    .lightbox-inner { display: flex; flex-direction: column; align-items: center; gap: .8rem; }
+    .lightbox img { max-width: 90vw; max-height: 82vh; object-fit: contain; border-radius: 2px; }
+    .lightbox-caption { color: rgba(255,255,255,.8); font-size: .85rem; letter-spacing: .12em; text-align: center; min-height: 1.2em; }
     .lightbox-close { position: absolute; top: 1.2rem; right: 1.5rem; color: #fff; font-size: 2rem; cursor: pointer; background: none; border: none; opacity: .7; transition: opacity .2s; }
     .lightbox-close:hover { opacity: 1; }
 
@@ -409,7 +411,10 @@
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lightboxClose">&times;</button>
   <button class="lightbox-prev" id="lightboxPrev">&#8249;</button>
-  <img id="lightboxImg" src="" alt="" />
+  <div class="lightbox-inner">
+    <img id="lightboxImg" src="" alt="" />
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
   <button class="lightbox-next" id="lightboxNext">&#8250;</button>
 </div>
 
@@ -599,22 +604,22 @@
       <button class="gallery-arrow prev" onclick="scrollGallery(-1)" aria-label="前へ">&#8249;</button>
       <div class="gallery-scroll" id="galleryScroll">
         <div class="gallery-item">
-          <img src="seishouin-home.jpg" alt="西笑院 境内" loading="lazy" onclick="openLightbox(0)">
+          <img src="seishouin-home.jpg" alt="西笑院 境内" data-caption="境内からのダイヤモンド富士" loading="lazy" onclick="openLightbox(0)">
         </div>
         <div class="gallery-item">
-          <img src="home3.jpg" alt="西笑院 本堂" loading="lazy" onclick="openLightbox(1)">
+          <img src="home3.jpg" alt="西笑院 本堂" data-caption="家紋「一文字に三つ星」の入った瓦屋根" loading="lazy" onclick="openLightbox(1)">
         </div>
         <div class="gallery-item">
-          <img src="home6.png" alt="西笑院 境内" loading="lazy" onclick="openLightbox(2)">
+          <img src="home6.png" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(2)">
         </div>
         <div class="gallery-item">
-          <img src="kunpu.jpeg" alt="永代供養塔 薫風" loading="lazy" onclick="openLightbox(3)">
+          <img src="kunpu.jpeg" alt="永代供養塔 薫風" data-caption="" loading="lazy" onclick="openLightbox(3)">
         </div>
         <div class="gallery-item">
-          <img src="sekihi.jpeg" alt="西笑院 石碑" loading="lazy" onclick="openLightbox(4)">
+          <img src="sekihi.jpeg" alt="西笑院 石碑" data-caption="創建600年を記念して建てられた石碑" loading="lazy" onclick="openLightbox(4)">
         </div>
         <div class="gallery-item">
-          <img src="IMG_3907.jpeg" alt="西笑院 境内" loading="lazy" onclick="openLightbox(5)">
+          <img src="IMG_3907.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(5)">
         </div>
       </div>
       <button class="gallery-arrow next" onclick="scrollGallery(1)" aria-label="次へ">&#8250;</button>
@@ -885,30 +890,35 @@
   function closeMenu() { hamburger.classList.remove('open'); mobileNav.classList.remove('open'); }
 
   // ライトボックス（prev/next対応）
-  const lightbox      = document.getElementById('lightbox');
-  const lightboxImg   = document.getElementById('lightboxImg');
-  const lightboxClose = document.getElementById('lightboxClose');
-  const lightboxPrev  = document.getElementById('lightboxPrev');
-  const lightboxNext  = document.getElementById('lightboxNext');
-  const galleryImgs   = Array.from(document.querySelectorAll('.gallery-scroll .gallery-item img'));
+  const lightbox        = document.getElementById('lightbox');
+  const lightboxImg     = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxClose   = document.getElementById('lightboxClose');
+  const lightboxPrev    = document.getElementById('lightboxPrev');
+  const lightboxNext    = document.getElementById('lightboxNext');
+  const galleryImgs     = Array.from(document.querySelectorAll('.gallery-scroll .gallery-item img'));
   function scrollGallery(dir) {
     document.getElementById('galleryScroll').scrollBy({ left: dir * 380, behavior: 'smooth' });
   }
   let currentIdx = 0;
+  function setLightboxImg(img) {
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightboxCaption.textContent = img.dataset.caption || '';
+  }
   function openLightbox(idx) {
     if (typeof idx === 'number') {
       currentIdx = idx;
-      lightboxImg.src = galleryImgs[idx].src;
-      lightboxImg.alt = galleryImgs[idx].alt;
+      setLightboxImg(galleryImgs[idx]);
     } else {
       lightboxImg.src = idx;
+      lightboxCaption.textContent = '';
     }
     lightbox.classList.add('open');
   }
   function moveLightbox(dir) {
     currentIdx = (currentIdx + dir + galleryImgs.length) % galleryImgs.length;
-    lightboxImg.src = galleryImgs[currentIdx].src;
-    lightboxImg.alt = galleryImgs[currentIdx].alt;
+    setLightboxImg(galleryImgs[currentIdx]);
   }
   lightboxPrev.addEventListener('click', e => { e.stopPropagation(); moveLightbox(-1); });
   lightboxNext.addEventListener('click', e => { e.stopPropagation(); moveLightbox(1); });
