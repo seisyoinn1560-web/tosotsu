@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="臨済宗南禅寺派 兜率山 西笑院。創建620年を越える八王子の禅寺。樹木葬・永代供養・お墓・法要・葬儀のご案内。東京都八王子市山田町1560。" />
+  <meta name="keywords" content="西笑院, 八王子 寺, 臨済宗, 南禅寺派, 永代供養, 樹木葬, 墓地, 八王子 お墓, 法要, 葬儀, 坐禅" />
+  <link rel="canonical" href="https://seishouin.jp/" />
+  <title>【公式】八王子 西笑院｜創建620年を越える禅寺</title>
+  <link rel="icon" type="image/png" href="c16.png" />
+  <link rel="apple-touch-icon" href="c16.png" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://seishouin.jp/" />
+  <meta property="og:title"       content="【公式】八王子 西笑院｜創建620年を越える禅寺" />
+  <meta property="og:description" content="臨済宗南禅寺派 兜率山 西笑院。創建620年を越える八王子の禅寺。樹木葬・永代供養・お墓・法要のご案内。" />
+  <meta property="og:image"       content="https://seishouin.jp/home3.jpg" />
+  <meta property="og:locale"      content="ja_JP" />
+  <meta property="og:site_name"   content="兜率山 西笑院" />
+  <meta name="twitter:card"       content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BuddhistTemple",
+    "name": "兜率山 西笑院",
+    "alternateName": ["西笑院", "せいしょういん", "Seisho-in"],
+    "description": "臨済宗南禅寺派 兜率山 西笑院。創建620年を越える東京都八王子市の禅寺です。樹木葬・永代供養・お墓・法要・葬儀のご相談を承ります。",
+    "url": "https://seishouin.jp",
+    "telephone": "+81-42-661-7310",
+    "faxNumber": "+81-42-661-7332",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "山田町1560",
+      "addressLocality": "八王子市",
+      "addressRegion": "東京都",
+      "postalCode": "193-0933",
+      "addressCountry": "JP"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 35.646622, "longitude": 139.31445 },
+    "image": "https://seishouin.jp/seishouin-home.jpg",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "09:00", "closes": "17:00"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:     #1a1a1a;
+      --muted:   #555;
+      --gold:    #9a7d4a;
+      --gold-lt: #c8a96e;
+      --stone:   #f5f3ef;
+      --white:   #fff;
+      --border:  #d9d3c8;
+      --dark:    #111;
+      --nav-h:   72px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: "Shippori Mincho B1","Hiragino Mincho ProN",serif; color: var(--ink); background: var(--white); line-height: 1.85; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* フェードイン */
+    .fade { opacity: 0; transform: translateY(50px); transition: opacity .9s ease, transform .9s cubic-bezier(.22,.68,0,1.2); }
+    .fade.visible { opacity: 1; transform: none; }
+
+    /* ===== ヘッダー ===== */
+    header {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+      background: rgba(255,255,255,.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      height: var(--nav-h);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 4%;
+      transition: box-shadow .3s;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; line-height: 1.2; }
+    .logo-kamon { width: 28px; height: 28px; flex-shrink: 0; mix-blend-mode: multiply; }
+    .logo-text { display: flex; flex-direction: column; align-items: center; }
+    .logo-yama { font-size: .58rem; letter-spacing: .22em; color: var(--muted); }
+    .logo-main { font-size: 1.05rem; letter-spacing: .22em; color: var(--ink); }
+    .logo-sub  { font-size: .56rem; letter-spacing: .15em; color: var(--gold); }
+    .header-right { display: flex; align-items: center; gap: 2rem; }
+    .header-tel {
+      display: flex; flex-direction: column; align-items: flex-end;
+      font-size: .72rem; letter-spacing: .05em; color: var(--muted); line-height: 1.4;
+    }
+    .header-tel a { font-size: 1.1rem; letter-spacing: .06em; color: var(--ink); font-weight: 600; }
+    .header-tel a:hover { color: var(--gold); }
+    nav { display: flex; gap: 1.6rem; }
+    nav a { font-size: .88rem; letter-spacing: .1em; color: var(--muted); position: relative; padding-bottom: 2px; transition: color .2s; }
+    nav a::after { content: ""; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold); transition: width .3s; }
+    nav a:hover { color: var(--gold); }
+    nav a:hover::after { width: 100%; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; border: none; background: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--ink); border-radius: 2px; transition: .3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { display: none; flex-direction: column; position: fixed; top: var(--nav-h); left: 0; width: 100%; background: #fff; border-bottom: 1px solid var(--border); z-index: 99; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { padding: 1rem 8%; font-size: .9rem; letter-spacing: .1em; color: var(--ink); border-bottom: 1px solid var(--border); }
+    .mobile-nav .mob-tel { padding: .8rem 8%; font-size: .85rem; color: var(--gold); font-weight: 600; letter-spacing: .08em; border-bottom: 1px solid var(--border); }
+
+    /* ===== ヒーロー ===== */
+    #hero { height: 100svh; min-height: 600px; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
+    .hero-content { position: relative; color: var(--white); padding: 0 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+    .hero-main { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .hero-right { position: absolute; left: 100%; top: 0; margin-left: -.8rem; display: flex; flex-direction: row; gap: .2rem; align-items: center; opacity: 0; animation: fadeUp 1.2s .5s forwards; }
+    .hero-tossotsu { font-size: 1.9rem; letter-spacing: .35em; color: rgba(255,255,255,.88); writing-mode: vertical-rl; }
+    .hero-label { font-size: 1.2rem; letter-spacing: .3em; color: rgba(255,255,255,.65); writing-mode: vertical-rl; }
+    .hero-title-wrap { display: flex; flex-direction: column; align-items: center; opacity: 0; animation: fadeUp 1.2s .55s forwards; }
+    .hero-kamon { width: 52px; height: 52px; object-fit: contain; filter: invert(1); mix-blend-mode: screen; display: block; margin-bottom: .6rem; opacity: 0; animation: fadeUp 1.2s .3s forwards; }
+    .hero-title { font-size: clamp(2.4rem,6vw,4rem); letter-spacing: .3em; font-weight: 800; writing-mode: vertical-rl; display: inline-block; }
+    .hero-romaji { display: block; font-size: .75rem; letter-spacing: .3em; color: rgba(255,255,255,.6); margin-top: .8rem; text-align: center; }
+    .hero-divider { width: 48px; height: 1px; background: var(--gold-lt); opacity: 0; animation: fadeUp 1.2s .8s forwards; margin: .8rem 0; }
+    .hero-cta { opacity: 0; animation: fadeUp 1.2s 1s forwards; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: .5rem; }
+    .hero-btn {
+      display: inline-block; padding: .75rem 1.8rem;
+      font-size: .78rem; letter-spacing: .2em;
+      border-radius: 2px; transition: background .25s, color .25s;
+      font-family: inherit;
+    }
+    .hero-btn-primary { background: var(--gold-lt); color: #fff; }
+    .hero-btn-primary:hover { background: var(--gold); color: #fff; }
+    .hero-btn-outline { border: 1px solid rgba(255,255,255,.6); color: rgba(255,255,255,.85); }
+    .hero-btn-outline:hover { border-color: var(--gold-lt); color: var(--gold-lt); }
+    .hero-scroll { position: absolute; bottom: 2rem; left: 0; right: 0; display: flex; flex-direction: column; align-items: center; gap: .4rem; color: rgba(255,255,255,.55); font-size: .65rem; letter-spacing: .2em; opacity: 0; animation: fadeUp 1.2s 1.3s forwards; }
+    .hero-scroll::after { content: ""; display: block; width: 1px; height: 36px; background: rgba(255,255,255,.4); animation: scrollLine 1.6s ease-in-out infinite; }
+    @keyframes scrollLine { 0%,100%{opacity:.2;transform:scaleY(1);} 50%{opacity:.8;transform:scaleY(1.3);} }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(50px);} to{opacity:1;transform:none;} }
+
+    /* ===== お知らせバー ===== */
+    #news-bar { background: var(--stone); border-bottom: 1px solid var(--border); padding: .9rem 5%; }
+    .news-bar-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: baseline; gap: 1.2rem; flex-wrap: wrap; }
+    .news-bar-label { font-size: .62rem; letter-spacing: .3em; color: var(--gold); white-space: nowrap; }
+    .news-list { display: flex; flex-direction: column; gap: .3rem; flex: 1; }
+    .news-item { display: flex; align-items: baseline; gap: .8rem; font-size: .82rem; }
+    .news-date { font-size: .7rem; color: var(--muted); white-space: nowrap; }
+    .news-text { color: var(--ink); }
+
+    /* ===== セクション共通 ===== */
+    section { padding: 6rem 5%; }
+    section:nth-child(even) { background: var(--stone); }
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-label { font-size: .68rem; letter-spacing: .38em; color: var(--gold); display: block; margin-bottom: .6rem; }
+    .section-title { font-size: clamp(1.5rem,3vw,2rem); letter-spacing: .18em; font-weight: 400; }
+    .section-lead { color: var(--muted); font-size: .95rem; text-align: center; margin-top: 1rem; line-height: 2; }
+    .section-line { width: 36px; height: 1px; background: var(--gold); margin: 1rem auto 0; }
+    .inner { max-width: 860px; margin: 0 auto; }
+
+    /* ===== サービス一覧 ===== */
+    #services { padding: 4rem 5%; background: var(--white); }
+    .services-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; max-width: 980px; margin: 0 auto; }
+    .service-card {
+      display: flex; flex-direction: column; align-items: center; gap: .6rem;
+      padding: 1.8rem .8rem; text-align: center;
+      border: 1px solid var(--border); border-radius: 3px;
+      transition: border-color .25s, box-shadow .25s, transform .25s;
+      cursor: pointer; text-decoration: none; color: inherit;
+    }
+    .service-card:hover { border-color: var(--gold); box-shadow: 0 4px 20px rgba(154,125,74,.12); transform: translateY(-3px); }
+    .service-icon { font-size: 2rem; line-height: 1; }
+    .service-name { font-size: .82rem; letter-spacing: .12em; color: var(--ink); font-weight: 600; }
+    .service-sub  { font-size: .68rem; letter-spacing: .05em; color: var(--muted); line-height: 1.5; }
+    @media (max-width: 768px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 480px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    /* ===== 境内案内（横スクロールギャラリー） ===== */
+    .gallery-scroll-wrap { position: relative; }
+    .gallery-scroll {
+      display: flex;
+      gap: .6rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: .4rem;
+    }
+    .gallery-scroll::-webkit-scrollbar { height: 4px; }
+    .gallery-scroll::-webkit-scrollbar-track { background: #f0ede8; }
+    .gallery-scroll::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+    .gallery-item { flex: 0 0 360px; height: 260px; scroll-snap-align: start; overflow: hidden; border-radius: 2px; cursor: pointer; }
+    .gallery-item-sm { flex: 0 0 210px; height: 260px; scroll-snap-align: start; overflow: hidden; border-radius: 2px; cursor: pointer; }
+    .gallery-item-sm img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .gallery-item-sm:hover img { transform: scale(1.04); }
+    @media (max-width: 640px) { .gallery-item-sm { flex: 0 0 52vw; height: 180px; } }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .gallery-item:hover img { transform: scale(1.04); }
+    .gallery-arrow {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(255,255,255,.88); border: none; color: var(--ink);
+      font-size: 1.6rem; width: 44px; height: 44px; border-radius: 50%;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,.15); transition: background .2s; z-index: 2;
+    }
+    .gallery-arrow:hover { background: #fff; }
+    .gallery-arrow.prev { left: -18px; }
+    .gallery-arrow.next { right: -18px; }
+    @media (max-width: 640px) {
+      .gallery-item { flex: 0 0 78vw; height: 220px; }
+      .gallery-arrow { display: none; }
+    }
+
+    /* ===== 歴史 ===== */
+    .history-body { display: grid; gap: 2rem; }
+    .history-body p { color: var(--muted); text-align: justify; }
+    .history-list { display: grid; gap: 1.2rem; margin-top: 2rem; }
+    .history-item { display: grid; grid-template-columns: 140px 1fr; gap: 1rem; padding: 1.2rem 1.5rem; background: var(--white); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 2px; }
+    .history-item dt { font-size: .72rem; letter-spacing: .18em; color: var(--gold); padding-top: .1rem; }
+    .history-item dd { font-size: 1rem; color: var(--muted); line-height: 1.8; }
+    @media (max-width: 600px) { .history-item { grid-template-columns: 1fr; gap: .3rem; } }
+
+    /* ===== 年間行事 ===== */
+    .events { display: grid; gap: 1rem; }
+    .event-item { display: grid; grid-template-columns: 80px 1fr; gap: 1rem; align-items: start; padding: 1.2rem 1.5rem; background: var(--white); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 2px; }
+    .event-month { font-size: .9rem; letter-spacing: .2em; color: var(--gold); font-weight: 600; }
+    .event-name { font-size: 1.08rem; letter-spacing: .05em; }
+    .event-desc { font-size: .92rem; color: var(--muted); margin-top: .15rem; }
+    .event-photo { margin-top: .8rem; border-radius: 2px; overflow: hidden; max-width: 360px; }
+    .event-photo img { width: 100%; max-width: 200px; cursor: pointer; transition: opacity .2s; }
+    .event-photo img:hover { opacity: .8; }
+    .sennenjo-wrap { width: 120px; overflow: hidden; border-radius: 2px; position: relative; flex-shrink: 0; }
+    .sennenjo-wrap img { width: 100%; }
+
+    /* ライトボックス */
+    .lightbox { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,.88); align-items: center; justify-content: center; }
+    .lightbox.open { display: flex; }
+    .lightbox-inner { display: flex; flex-direction: column; align-items: center; gap: .8rem; }
+    .lightbox img { max-width: 90vw; max-height: 82vh; object-fit: contain; border-radius: 2px; }
+    .lightbox-caption { color: rgba(255,255,255,.8); font-size: .85rem; letter-spacing: .12em; text-align: center; min-height: 1.2em; }
+    .lightbox-close { position: absolute; top: 1.2rem; right: 1.5rem; color: #fff; font-size: 2rem; cursor: pointer; background: none; border: none; opacity: .7; transition: opacity .2s; }
+    .lightbox-close:hover { opacity: 1; }
+
+    /* ===== 住職紹介 ===== */
+    .priest-card { display: flex; gap: 3rem; align-items: flex-start; }
+    .priest-photo { flex-shrink: 0; width: 180px; height: 220px; background: linear-gradient(135deg,#3a5a3a,#2d4a2d); border-radius: 2px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.35); font-size: .72rem; letter-spacing: .15em; text-align: center; }
+    .priest-info h3 { font-size: 1.25rem; letter-spacing: .15em; font-weight: 400; margin-bottom: .3rem; }
+    .priest-info .priest-title { font-size: .75rem; letter-spacing: .2em; color: var(--gold); margin-bottom: 1rem; }
+    .priest-info p { color: var(--muted); font-size: 1rem; letter-spacing: .1em; }
+
+    /* ===== お墓・供養タブ ===== */
+    .tab-nav { display: flex; border-bottom: 2px solid var(--border); margin-bottom: 2.5rem; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .tab-btn { padding: .95rem 1.8rem; font-size: .88rem; letter-spacing: .15em; color: var(--muted); border: none; background: none; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; transition: color .2s, border-color .2s; font-family: inherit; white-space: nowrap; flex-shrink: 0; }
+    .tab-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
+    .tab-btn:hover { color: var(--gold); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+    .kuyo-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .kuyo-card { background: var(--white); border: 1px solid var(--border); padding: 1.8rem 1.5rem; border-radius: 2px; text-align: center; }
+    .kuyo-icon { font-size: 2rem; margin-bottom: .8rem; }
+    .kuyo-card h4 { font-size: 1rem; letter-spacing: .12em; margin-bottom: .6rem; }
+    .kuyo-card p { font-size: .92rem; color: var(--muted); }
+    .kuyo-note { margin-top: 2.5rem; padding: 1.5rem; border: 1px solid var(--border); border-left: 3px solid var(--gold); background: var(--white); }
+    .kuyo-note p { font-size: .85rem; color: var(--muted); }
+    .eitai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+    @media (max-width: 640px) { .eitai-grid { grid-template-columns: 1fr; } }
+    .eitai-card { background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--gold); border-radius: 2px; padding: 1.8rem 1.5rem; }
+    .eitai-card h4 { font-size: .92rem; letter-spacing: .15em; color: var(--ink); margin-bottom: 1.2rem; padding-bottom: .6rem; border-bottom: 1px solid var(--border); }
+    .fee-list { display: grid; gap: .8rem; }
+    .fee-item { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; font-size: .82rem; }
+    .fee-item .fee-label { color: var(--muted); flex: 1; line-height: 1.6; }
+    .fee-item .fee-price { color: var(--gold); font-size: .88rem; white-space: nowrap; font-weight: 600; }
+    .fee-item .fee-free  { color: var(--muted); font-size: .8rem; white-space: nowrap; }
+    .fee-note { font-size: .75rem; color: var(--muted); margin-top: 1rem; padding-top: .8rem; border-top: 1px solid var(--border); line-height: 1.7; }
+    .photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+    .photo-grid img { width: 100%; height: 220px; object-fit: cover; border-radius: 2px; cursor: pointer; }
+    @media (max-width: 768px) { .photo-grid { grid-template-columns: 1fr; } .photo-grid img { height: auto; } }
+
+    /* ===== お問い合わせ ===== */
+    .contact-lead { color: var(--muted); font-size: .92rem; text-align: center; margin-bottom: 2.5rem; line-height: 2; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start; }
+    @media (max-width: 680px) { .contact-grid { grid-template-columns: 1fr; gap: 2rem; } }
+    .contact-info dt { font-size: .72rem; letter-spacing: .18em; color: var(--gold); margin-top: 1.2rem; }
+    .contact-info dt:first-child { margin-top: 0; }
+    .contact-info dd { font-size: 1rem; color: var(--muted); margin-top: .2rem; line-height: 1.8; }
+    .fg { margin-bottom: 1.4rem; }
+    .fl { display: flex; align-items: center; gap: .5rem; font-size: .75rem; color: var(--muted); letter-spacing: .08em; margin-bottom: .4rem; }
+    .req { font-size: .6rem; color: var(--gold); border: 1px solid var(--gold); padding: 1px 5px; border-radius: 2px; }
+    .opt { font-size: .6rem; color: var(--muted); border: 1px solid var(--border); padding: 1px 5px; border-radius: 2px; }
+    .fg input, .fg select, .fg textarea { width: 100%; padding: 10px 0; border: none; border-bottom: 1px solid var(--border); background: transparent; font-family: inherit; font-size: .9rem; color: var(--ink); outline: none; -webkit-appearance: none; border-radius: 0; transition: border-color .25s; }
+    .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--gold); }
+    .fg input.err, .fg select.err, .fg textarea.err { border-color: #a02020; }
+    .fg textarea { height: 120px; resize: vertical; }
+    .fg select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath stroke='%23999' stroke-width='1.2' fill='none' d='M1 1l4 4 4-4'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 4px center; }
+    .ferr { display: none; font-size: .72rem; color: #a02020; margin-top: 4px; }
+    .ferr.on { display: block; }
+    .fsub { padding: .7rem 2.2rem; background: var(--gold); color: #fff; font-family: inherit; font-size: .8rem; letter-spacing: .2em; border: none; cursor: pointer; border-radius: 2px; transition: background .25s; margin-top: .6rem; }
+    .fsub:hover { background: #7a6038; }
+    .fsuc { display: none; padding: 3rem 0; }
+    .fsuc.on { display: block; }
+    .fsuc-bar { border-left: 3px solid var(--gold); padding-left: 1.2rem; }
+    .fsuc h3 { font-size: 1rem; color: var(--ink); margin-bottom: .5rem; letter-spacing: .1em; font-weight: 400; }
+    .fsuc p { font-size: .82rem; color: var(--muted); }
+    .line-btn { display: inline-flex; align-items: center; gap: .5rem; padding: .65rem 1.5rem; background: #06C755; color: #fff; border-radius: 4px; font-size: .85rem; letter-spacing: .1em; margin-top: .5rem; transition: background .2s; font-family: inherit; }
+    .line-btn:hover { background: #05a648; color: #fff; }
+
+    /* ===== アクセス ===== */
+    .access-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .access-info dt { font-size: .72rem; letter-spacing: .18em; color: var(--gold); margin-top: 1.2rem; }
+    .access-info dt:first-child { margin-top: 0; }
+    .access-info dd { font-size: 1rem; color: var(--muted); margin-top: .2rem; }
+    .map-wrap { width: 100%; aspect-ratio: 4/3; background: #e8e4de; border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
+    .map-wrap iframe { width: 100%; height: 100%; border: none; }
+    @media (max-width: 768px) { .access-grid { grid-template-columns: 1fr; } .map-wrap { order: -1; } }
+
+    /* ===== フッター ===== */
+    footer { background: #111; color: rgba(255,255,255,.5); padding: 4rem 5% 2rem; }
+    .footer-inner { max-width: 860px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .footer-brand .footer-logo { font-size: 1.4rem; letter-spacing: .2em; color: #fff; margin-bottom: .3rem; }
+    .footer-brand .footer-sub  { font-size: .68rem; letter-spacing: .22em; color: var(--gold-lt); margin-bottom: 1rem; }
+    .footer-brand p { font-size: .78rem; line-height: 1.9; }
+    .footer-col h4 { font-size: .68rem; letter-spacing: .3em; color: var(--gold-lt); margin-bottom: 1rem; }
+    .footer-col a { display: block; font-size: .78rem; color: rgba(255,255,255,.45); margin-bottom: .5rem; transition: color .2s; }
+    .footer-col a:hover { color: var(--gold-lt); }
+    .footer-col p { font-size: .78rem; line-height: 1.9; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 1.8rem; flex-wrap: wrap; gap: 1rem; }
+    .footer-line-btn { display: inline-flex; align-items: center; gap: .55rem; border: 1px solid rgba(255,255,255,.2); border-radius: 40px; padding: .5rem 1.3rem .5rem .9rem; color: rgba(255,255,255,.5); font-size: .72rem; letter-spacing: .13em; transition: border-color .3s, color .3s, background .3s; }
+    .footer-line-btn:hover { border-color: #06C755; color: #06C755; }
+    .footer-copy { font-size: .65rem; letter-spacing: .1em; }
+    @media (max-width: 680px) { .footer-top { grid-template-columns: 1fr; gap: 2rem; } .footer-bottom { flex-direction: column; align-items: flex-start; } }
+
+    /* ===== アンカーオフセット修正 ===== */
+    section, #news-bar { scroll-margin-top: calc(var(--nav-h) + 12px); }
+
+    /* ===== ナビアクティブ ===== */
+    nav a.active { color: var(--gold); }
+    nav a.active::after { width: 100%; }
+
+    /* ===== FAQ ===== */
+    .faq-list { display: grid; gap: .6rem; }
+    .faq-item { border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 2px; overflow: hidden; }
+    .faq-q {
+      width: 100%; text-align: left; padding: 1.1rem 1.5rem;
+      background: var(--white); border: none; cursor: pointer;
+      font-family: inherit; font-size: 1rem; letter-spacing: .06em; color: var(--ink);
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+      transition: background .2s;
+    }
+    .faq-q:hover { background: var(--stone); }
+    .faq-q::after { content: "＋"; font-size: .9rem; color: var(--gold); flex-shrink: 0; transition: transform .3s; }
+    .faq-q[aria-expanded="true"]::after { content: "－"; }
+    .faq-a { display: none; padding: 0 1.5rem 1.2rem; background: var(--white); }
+    .faq-a.open { display: block; }
+    .faq-a p { font-size: .95rem; color: var(--muted); line-height: 2; }
+
+    /* ===== ライトボックス prev/next ===== */
+    .lightbox-prev, .lightbox-next {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(255,255,255,.15); border: none; color: #fff;
+      font-size: 2.2rem; line-height: 1; padding: .5rem .9rem;
+      cursor: pointer; border-radius: 2px;
+      transition: background .2s; z-index: 1;
+    }
+    .lightbox-prev { left: 1.2rem; }
+    .lightbox-next { right: 1.2rem; }
+    .lightbox-prev:hover, .lightbox-next:hover { background: rgba(255,255,255,.3); }
+
+    /* ===== 歴史アコーディオン ===== */
+    .history-toggle {
+      display: block; margin: 1.8rem auto 0;
+      padding: .65rem 2.2rem;
+      background: none; border: 1px solid var(--gold);
+      color: var(--gold); font-family: inherit;
+      font-size: .82rem; letter-spacing: .2em;
+      cursor: pointer; border-radius: 2px;
+      transition: background .25s, color .25s;
+    }
+    .history-toggle:hover { background: var(--gold); color: #fff; }
+    .history-expand {
+      position: relative;
+      max-height: 160px;
+      overflow: hidden;
+      transition: max-height .8s ease;
+    }
+    .history-expand::after {
+      content: "";
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 110px;
+      background: linear-gradient(to bottom, transparent, #fff);
+      pointer-events: none;
+      transition: opacity .4s;
+    }
+    .history-expand.open {
+      max-height: 4000px;
+    }
+    .history-expand.open::after {
+      opacity: 0;
+    }
+
+    /* ===== トップへ戻るボタン ===== */
+    #totop { position: fixed; bottom: 2rem; right: 2rem; z-index: 50; width: 44px; height: 44px; background: var(--gold); color: #fff; border: none; border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity .3s, background .2s; }
+    #totop.show { opacity: 1; pointer-events: auto; }
+    #totop:hover { background: #7a6038; }
+
+    /* ===== レスポンシブ ===== */
+    @media (max-width: 900px) { nav { display: none; } .header-tel { display: none; } .hamburger { display: flex; } }
+    @media (max-width: 768px) { section { padding: 4.5rem 6%; } .priest-card { flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; } .priest-photo { width: 140px; height: 170px; } .event-item { grid-template-columns: 60px 1fr; } }
+    @media (max-width: 480px) { .hero-title { letter-spacing: .12em; } }
+  </style>
+</head>
+<body>
+
+<!-- ライトボックス -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <button class="lightbox-prev" id="lightboxPrev">&#8249;</button>
+  <div class="lightbox-inner">
+    <img id="lightboxImg" src="" alt="" />
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+  <button class="lightbox-next" id="lightboxNext">&#8250;</button>
+</div>
+
+<!-- トップへ戻る -->
+<button id="totop" aria-label="トップへ戻る">↑</button>
+
+<!-- ===== ヘッダー ===== -->
+<header>
+  <a href="#hero" class="logo">
+    <img src="c16.png" alt="家紋" class="logo-kamon">
+    <div class="logo-text">
+      <span class="logo-yama">兜率山</span>
+      <span class="logo-main">西笑院</span>
+      <span class="logo-sub">SEISHO-IN</span>
+    </div>
+  </a>
+  <div class="header-right">
+    <nav>
+      <a href="#history">歴史</a>
+      <a href="#gallery">境内</a>
+      <a href="#events">年間行事</a>
+      <a href="#kuyo">お墓・供養</a>
+      <a href="#contact">お問い合わせ</a>
+      <a href="#access">アクセス</a>
+    </nav>
+    <div class="header-tel">
+      <span>お気軽にご相談ください</span>
+      <a href="tel:0426617310">042-661-7310</a>
+    </div>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <span class="mob-tel">📞 042-661-7310</span>
+  <a href="#history"   onclick="closeMenu()">歴史</a>
+  <a href="#gallery"   onclick="closeMenu()">境内のご案内</a>
+  <a href="#events"    onclick="closeMenu()">年間行事</a>
+  <a href="#kuyo"      onclick="closeMenu()">お墓・供養</a>
+  <a href="#contact"   onclick="closeMenu()">お問い合わせ</a>
+  <a href="#access"    onclick="closeMenu()">アクセス</a>
+</div>
+
+<!-- ===== ヒーロー ===== -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-main">
+      <img src="c16.png" alt="家紋" class="hero-kamon" />
+      <div class="hero-title-wrap">
+        <h1 class="hero-title">西笑院</h1>
+        <p class="hero-romaji">SEISHO-IN</p>
+      </div>
+      <div class="hero-right">
+        <p class="hero-tossotsu">兜率山</p>
+        <p class="hero-label">臨済宗南禅寺派</p>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">SCROLL</div>
+</section>
+
+<!-- ===== お知らせ ===== -->
+<div id="news-bar">
+  <div class="news-bar-inner">
+    <span class="news-bar-label">お知らせ</span>
+    <div class="news-list">
+      <div class="news-item">
+        <span class="news-date">2026.05</span>
+        <span class="news-text">ホームページを開設いたしました。</span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">随時</span>
+        <span class="news-text">各種仏事のご相談承っております。</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 歴史 ===== -->
+<section id="history">
+  <div class="inner">
+    <div class="section-header fade">
+      <span class="section-label">HISTORY</span>
+      <h2 class="section-title">お寺の歴史</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="history-body fade">
+      <p>
+        「<ruby>臨済宗<rt>りんざいしゅう</rt></ruby><ruby>南禅寺派<rt>なんぜんじは</rt></ruby>　<ruby>兜率山<rt>とそつざん</rt></ruby>　<ruby>西笑院<rt>せいしょういん</rt></ruby>」と申します。
+        応永10年（1403）ないしは明徳4年（1393）の開創と伝えられ、廣園寺の塔頭として今からおよそ620〜630年余りの歴史を持つ禅寺です。
+        長い年月を経て地域の人々の心の拠り所として歩み続け、今日に至ります。
+      </p>
+      <p style="margin-top:1.2rem;">
+        当院の歴史においてとりわけ特筆すべきは、当院にて得度した<strong><ruby>峰尾大休老師<rt>みねおだいきゅうろうし</rt></ruby></strong>の存在です。明治・大正・昭和の三代にわたり宗門の要として活躍し、埼玉・野火止の<strong>平林寺</strong>に関東初の妙心寺派専門道場を開き、後に<strong>臨済宗管長</strong>の重責をも担われた傑僧が、この西笑院を出発点として歩みを始めました。
+      </p>
+
+      <div class="history-expand" id="historyExpand">
+        <dl class="history-list" style="margin-top:2rem;">
+          <div class="history-item">
+            <dt>創建</dt>
+            <dd>応永10年（1403）ないしは明徳4年（1393）<br>廣園寺の塔頭寺院として開創</dd>
+          </div>
+          <div class="history-item">
+            <dt>開山</dt>
+            <dd>廣園寺第4世・道運慶禅師</dd>
+          </div>
+          <div class="history-item">
+            <dt>本堂</dt>
+            <dd>当院12世・敬堂和尚の代に再建。現在の本堂はこの時のものを今に伝えています。</dd>
+          </div>
+          <div class="history-item">
+            <dt>御本尊・祀られる仏様</dt>
+            <dd>
+              本堂中央：本尊「釈迦牟尼仏（しゃかむにぶつ）」<br>
+              脇侍：文殊菩薩（もんじゅぼさつ）・普賢菩薩（ふげんぼさつ）
+            </dd>
+          </div>
+          <div class="history-item">
+            <dt>塔頭の変遷</dt>
+            <dd>江戸時代末期、廣園寺周辺には49もの塔頭寺院が連なっていましたが、度重なる火災と大正12年（1923年）の関東大震災を経て現存するのは4ヶ寺。西笑院はその一院です。</dd>
+          </div>
+          <div class="history-item" style="align-items:start;">
+            <dt>明治〜昭和<br><small style="font-size:.65rem;color:var(--muted);letter-spacing:.08em;">峰尾大休老師</small></dt>
+            <dd>
+              <p style="margin-bottom:.9rem; font-size:1rem; color:var(--muted); line-height:2;">
+                <ruby>峰尾大休<rt>みねおだいきゅう</rt></ruby>老師は万延元年（1860）、武蔵国南多摩郡（現・八王子市）に生まれ、明治５年（1872）<strong>大安和尚</strong>を受業師として兜率山西笑院にて得度。受業師の示寂に伴い、同13年（1880）鎌倉・円覚僧堂に掛錫し今北洪川老師に相見、掛錫を許された。同年、<strong>西笑院住職に就任</strong>するも参禅を続け、同24年（1891）洪川老師遷化ののちは遺命によって釋宗演老師に参禅し、印可を受ける。
+              </p>
+              <p style="margin-bottom:.9rem; font-size:1rem; color:var(--muted); line-height:2;">
+                円覚僧堂を辞したのち西笑院に帰山し、堂塔の修復等に勤めるなか、明治31年（1898）本師・宗演老師より招請を受け横浜・寳林寺に晋山、寳林僧堂（のち閉単）師家に就任。また円覚僧堂では宗演老師に代わり師家代参を務め、雲衲の接化にあたった。
+              </p>
+              <p style="margin-bottom:.9rem; font-size:1rem; color:var(--muted); line-height:2;">
+                明治34年（1901）、埼玉・野火止（現・新座市）の<strong>平林寺</strong>に晋山（第21世住職）。同36年（1904）には関東初となる妙心寺派専門道場・<strong>平林僧堂</strong>を開単し、師家として多くの雲衲を育てた。豪放磊落な傑僧として、地域の人々から経済人・文化人に至るまで篤い信望を集めた。
+              </p>
+              <p style="margin-bottom:1rem; font-size:1rem; color:var(--muted); line-height:2;">
+                昭和29年（1954）、平林寺にて遷化。世寿94歳。妙心寺585世・妙心寺派管長を歴任。臨済宗十三派が合同した折には<strong>臨済宗管長</strong>に就任。室号・<strong>韜光窟</strong>（とうこうくつ）、号・睡足閑人。法語集『韜光窟風懐録』、著書『白隠禅師開莚普説講話』がある。
+              </p>
+              <div style="display:flex; gap:1.5rem; flex-wrap:wrap; margin-top:.5rem; align-items:flex-start;">
+                <div>
+                  <div class="event-photo">
+                    <img src="mineo-daikyu.jpg" alt="峰尾大休老師" title="峰尾大休老師">
+                  </div>
+                  <p style="font-size:.72rem; color:var(--muted); margin-top:.4rem; text-align:center; width:200px;">峰尾大休老師</p>
+                </div>
+                <div>
+                  <div class="sennenjo-wrap">
+                    <img src="sennenjo.png" alt="峰尾大休老師遺愛千年杖">
+                  </div>
+                  <p style="font-size:.72rem; color:var(--muted); margin-top:.4rem; line-height:1.7; width:140px;">遺愛千年杖<br>老師が生涯手放さなかった杖。老師遷化後、当院に奉納。</p>
+                </div>
+                <div style="display:flex; flex-direction:column; gap:1.2rem;">
+                  <div>
+                    <div class="event-photo">
+                      <img src="mineo-daikyu-gaku.jpeg" alt="峰尾大休老師 扁額" style="max-width:200px; width:auto; height:auto;">
+                    </div>
+                    <p style="font-size:.72rem; color:var(--muted); margin-top:.4rem; line-height:1.7; width:200px;">老師直筆の扁額（当院所蔵）</p>
+                  </div>
+                  <div>
+                    <div class="event-photo">
+                      <img src="jiku.jpg" alt="峰尾大休老師 軸" style="max-width:200px; width:auto; height:auto;">
+                    </div>
+                    <p style="font-size:.72rem; color:var(--muted); margin-top:.4rem; line-height:1.7; width:200px;">老師直筆の軸（当院所蔵）<br>近刹福昌寺様より寄贈</p>
+                  </div>
+                </div>
+              </div>
+            </dd>
+          </div>
+        </dl>
+      </div>
+      <button class="history-toggle" id="historyToggle">歴史の全容を読む ↓</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 境内案内（ギャラリー） ===== -->
+<section id="gallery">
+  <div class="inner">
+    <div class="section-header fade">
+      <span class="section-label">OUR TEMPLE</span>
+      <h2 class="section-title">境内のご案内</h2>
+      <div class="section-line"></div>
+      <p class="section-lead">緑豊かな境内で、心静かに手を合わせる場所</p>
+    </div>
+    <div class="gallery-scroll-wrap fade">
+      <button class="gallery-arrow prev" onclick="scrollGallery(-1)" aria-label="前へ">&#8249;</button>
+      <div class="gallery-scroll" id="galleryScroll">
+        <!-- 本堂系 -->
+        <div class="gallery-item">
+          <img src="home6.png" alt="西笑院 本堂" data-caption="本堂" loading="lazy" onclick="openLightbox(0)">
+        </div>
+        <div class="gallery-item">
+          <img src="home3.jpg" alt="西笑院 本堂" data-caption="家紋「一文字に三つ星」の入った瓦屋根" loading="lazy" onclick="openLightbox(1)">
+        </div>
+        <div class="gallery-item">
+          <img src="境内案内掲載写真/IMG_2507.jpeg" alt="西笑院 本堂" data-caption="" loading="lazy" onclick="openLightbox(2)">
+        </div>
+        <div class="gallery-item">
+          <img src="境内案内掲載写真/IMG_4775.jpeg" alt="西笑院 本堂" data-caption="" loading="lazy" onclick="openLightbox(3)">
+        </div>
+        <div class="gallery-item">
+          <img src="境内案内掲載写真/IMG_2517.jpeg" alt="西笑院 本堂" data-caption="" loading="lazy" onclick="openLightbox(4)">
+        </div>
+        <!-- 参道・境内 -->
+        <div class="gallery-item">
+          <img src="境内案内掲載写真/IMG_0469.jpeg" alt="西笑院 庭園" data-caption="庭園" loading="lazy" onclick="openLightbox(5)">
+        </div>
+        <div class="gallery-item">
+          <img src="境内案内掲載写真/IMG_4330.jpeg" alt="西笑院 赤門" data-caption="赤門" loading="lazy" onclick="openLightbox(6)">
+        </div>
+        <div class="gallery-item">
+          <img src="sekihi.jpeg" alt="西笑院 石碑" data-caption="開創600年記念碑" loading="lazy" onclick="openLightbox(7)">
+        </div>
+        <div class="gallery-item">
+          <img src="境内案内掲載写真/IMG_9222.jpeg" alt="西笑院 山門入口" data-caption="山門入口" loading="lazy" onclick="openLightbox(8)">
+        </div>
+        <div class="gallery-item">
+          <img src="境内案内掲載写真/IMG_4234.jpeg" alt="西笑院 入口階段" data-caption="入口階段" loading="lazy" onclick="openLightbox(9)">
+        </div>
+        <div class="gallery-item">
+          <img src="境内案内掲載写真/IMG_9232.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(10)">
+        </div>
+        <div class="gallery-item">
+          <img src="境内案内掲載写真/IMG_4192.JPG" alt="西笑院 赤松" data-caption="赤松 樹齢約300年" loading="lazy" onclick="openLightbox(11)">
+        </div>
+        <div class="gallery-item">
+          <img src="境内案内掲載写真/IMG_4356.jpeg" alt="西笑院 赤門と松" data-caption="同じ時を刻む赤門と松" loading="lazy" onclick="openLightbox(12)">
+        </div>
+        <div class="gallery-item">
+          <img src="境内案内掲載写真/IMG_9218.jpeg" alt="西笑院 墓地からの景色" data-caption="墓地からの景色" loading="lazy" onclick="openLightbox(13)">
+        </div>
+        <div class="gallery-item">
+          <img src="境内案内掲載写真/IMG_5517.jpeg" alt="西笑院 藤の花" data-caption="藤の花" loading="lazy" onclick="openLightbox(14)">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_3907.jpeg" alt="西笑院 達磨大師" data-caption="木彫りの達磨大師" loading="lazy" onclick="openLightbox(15)">
+        </div>
+        <div class="gallery-item">
+          <img src="境内案内掲載写真/IMG_5432.jpeg" alt="西笑院 樹木葬墓地" data-caption="樹木葬「祈りの聖地」" loading="lazy" onclick="openLightbox(16)">
+        </div>
+        <div class="gallery-item">
+          <img src="kunpu.jpeg" alt="永代供養塔 薫風" data-caption="永代供養「薫風」" loading="lazy" onclick="openLightbox(17)">
+        </div>
+        <!-- 富士山 -->
+        <div class="gallery-item">
+          <img src="seishouin-home.jpg" alt="西笑院 境内" data-caption="当院墓地上段から見えるダイヤモンド富士" loading="lazy" onclick="openLightbox(18)">
+        </div>
+        <div class="gallery-item">
+          <img src="境内案内掲載写真/IMG_3929.JPG" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(19)">
+        </div>
+        <div class="gallery-item">
+          <img src="境内案内掲載写真/IMG_3639.jpeg" alt="西笑院 境内" data-caption="" loading="lazy" onclick="openLightbox(20)">
+        </div>
+      </div>
+      <button class="gallery-arrow next" onclick="scrollGallery(1)" aria-label="次へ">&#8250;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 年間行事 ===== -->
+<section id="events">
+  <div class="inner">
+    <div class="section-header fade">
+      <span class="section-label">ANNUAL EVENTS</span>
+      <h2 class="section-title">年間行事</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="events">
+      <div class="event-item fade"><div class="event-month">2月15日</div><div><div class="event-name">涅槃会</div><div class="event-desc">お釈迦様がご入滅された日を偲び、その教えに感謝する法要です。</div></div></div>
+      <div class="event-item fade"><div class="event-month">3月</div><div><div class="event-name">春彼岸会</div><div class="event-desc">春分の日を中心とした七日間。先祖への供養と感謝を捧げます。</div></div></div>
+      <div class="event-item fade"><div class="event-month">4月8日</div><div><div class="event-name">花まつり（降誕会）</div><div class="event-desc">お釈迦様のご誕生をお祝いする行事。</div></div></div>
+      <div class="event-item fade"><div class="event-month">7月</div><div><div class="event-name">盂蘭盆会（お盆法要）</div><div class="event-desc">先祖をお迎えするお盆の法要。丁寧にご案内します。</div></div></div>
+      <div class="event-item fade"><div class="event-month">9月</div><div><div class="event-name">秋彼岸会</div><div class="event-desc">秋分の日を中心とした七日間。先祖の霊を偲び、心静かに手を合わせます。</div></div></div>
+      <div class="event-item fade"><div class="event-month">12月8日</div><div><div class="event-name">成道会</div><div class="event-desc">お釈迦様がお悟りを開かれた日を讃える法要です。</div></div></div>
+      <div class="event-item fade"><div class="event-month">坐禅会</div><div><div class="event-name">坐禅会</div><div class="event-desc">準備出来次第、開催予定です。詳細はお問い合わせください。</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== お墓・供養（タブ） ===== -->
+<section id="kuyo">
+  <div class="inner">
+    <div class="section-header fade">
+      <span class="section-label">GRAVES &amp; MEMORIAL</span>
+      <h2 class="section-title">お墓・供養のご案内</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="tab-nav fade" role="tablist">
+      <button class="tab-btn active" role="tab" data-tab="jumoku">樹木葬</button>
+      <button class="tab-btn" role="tab" data-tab="eitai">永代供養「薫風」</button>
+      <button class="tab-btn" role="tab" data-tab="bochi">墓地について</button>
+      <button class="tab-btn" role="tab" data-tab="hoyo">法要・葬儀</button>
+    </div>
+    <!-- 樹木葬 -->
+    <div class="tab-panel active" id="tab-jumoku">
+      <p style="text-align:center;color:var(--muted);font-size:1rem;margin-bottom:2rem;">自然の中で眠る、新しいかたちのご供養です。<br>西笑院では樹木葬墓地をご用意しております。</p>
+      <div style="text-align:center;margin-bottom:2rem;">
+        <img src="境内案内掲載写真/IMG_5432.jpeg" alt="西笑院 樹木葬" style="max-width:100%;max-height:420px;object-fit:cover;border-radius:2px;">
+      </div>
+      <div class="kuyo-grid">
+        <div class="kuyo-card"><div class="kuyo-icon">🌳</div><h4>樹木葬とは</h4><p>墓石の代わりに樹木を墓標とするお墓のかたちです。自然に還るやすらかなご供養として近年多くの方に選ばれています。</p></div>
+        <div class="kuyo-card"><div class="kuyo-icon">👨‍👩‍👧</div><h4>継承者がいなくても安心</h4><p>後継ぎがいない方や、管理の負担を軽減したい方にも安心してご利用いただけます。</p></div>
+        <div class="kuyo-card"><div class="kuyo-icon">📋</div><h4>見学・ご相談</h4><p>現地見学や詳細のご案内は随時承っております。お気軽にお問い合わせください。</p></div>
+      </div>
+      <div style="text-align:center;margin-top:2.5rem;">
+        <a href="https://www.im-jumokuso.com/place/2623" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:.8rem 2.5rem;background:var(--gold);color:#fff;font-size:.82rem;letter-spacing:.2em;border-radius:2px;transition:background .25s;">樹木葬の詳細・資料請求はこちら</a>
+        <p style="font-size:.72rem;color:var(--muted);margin-top:.8rem;">外部サイト（アイエム株式会社）へ移動します</p>
+      </div>
+    </div>
+    <!-- 永代供養 -->
+    <div class="tab-panel" id="tab-eitai">
+      <div style="text-align:center;color:var(--muted);font-size:.92rem;margin-bottom:2.5rem;">
+        <p style="font-size:1rem;letter-spacing:.15em;color:var(--gold);margin-bottom:.6rem;">永代供養塔「薫風」</p>
+        <p>後継者がいない方や遠方にお住まいの方のために、<br>当院が永代にわたり丁寧に供養を続ける永代供養塔です。<br>春秋彼岸・お盆には読経の上、御供養申し上げます。</p>
+      </div>
+      <div class="photo-grid fade">
+        <img src="kunpu.jpeg" alt="永代供養塔 薫風" onclick="openLightbox(this.src)">
+        <img src="kunpu2.jpeg" alt="永代供養塔 薫風" onclick="openLightbox(this.src)">
+      </div>
+      <div class="eitai-grid">
+        <div class="eitai-card"><h4>合祀</h4><div class="fee-list"><div class="fee-item"><span class="fee-label">志納金（御一霊）</span><span class="fee-price">25万円</span></div><div class="fee-item"><span class="fee-label" style="font-size:.75rem;">うち永代供養料</span><span class="fee-free">10万円含む</span></div><div class="fee-item"><span class="fee-label">彫刻料</span><span class="fee-price">3万円</span></div><div class="fee-item"><span class="fee-label">納骨料</span><span class="fee-price">2万円</span></div><div class="fee-item"><span class="fee-label">二霊目以降（一霊につき）</span><span class="fee-price">10万円</span></div></div><p class="fee-note">お遺骨を骨壺から布に包み、中央カロートに合祀いたします。</p></div>
+        <div class="eitai-card"><h4>骨壺安置</h4><div class="fee-list"><div class="fee-item"><span class="fee-label">志納金（御一霊）</span><span class="fee-price">30万円</span></div><div class="fee-item"><span class="fee-label" style="font-size:.75rem;">うち永代供養料</span><span class="fee-free">10万円含む</span></div><div class="fee-item"><span class="fee-label">彫刻料</span><span class="fee-price">3万円</span></div><div class="fee-item"><span class="fee-label">納骨料</span><span class="fee-price">2万円</span></div><div class="fee-item"><span class="fee-label">二霊目以降（一霊につき）</span><span class="fee-price">15万円</span></div></div><p class="fee-note">13回忌まで骨壺のままお預かり。延長・既に13回忌を過ぎている場合もご相談ください。</p></div>
+      </div>
+      <div class="kuyo-note" style="margin-top:1.5rem;"><p style="font-size:.82rem;color:var(--muted);line-height:2;">・年忌法要・命日の塔婆建立等のご供養も承ります。<br>・後継者がいない場合も、春秋彼岸・お盆には読経の上、御供養申し上げます。<br>・生前予約もご相談ください。<br>・戒名授与も承ります。</p></div>
+    </div>
+    <!-- 墓地 -->
+    <div class="tab-panel" id="tab-bochi">
+      <p style="text-align:center;color:var(--muted);font-size:1rem;margin-bottom:2rem;">西笑院では、境内墓地の区画をご案内しております。<br>緑豊かな静かな環境の中で、末永く大切な方をお守りいただけます。</p>
+      <div class="kuyo-grid">
+        <div class="kuyo-card"><div class="kuyo-icon">🪨</div><h4>墓地区画のご案内</h4><p>境内墓地の区画をご案内します。永代使用料・年間管理費については個別にご説明いたします。</p></div>
+        <div class="kuyo-card"><div class="kuyo-icon">🌿</div><h4>改葬・お引越し</h4><p>他の寺院や霊園からのお墓のお引越し（改葬）も承ります。必要な手続きを含めてご相談ください。</p></div>
+        <div class="kuyo-card"><div class="kuyo-icon">📋</div><h4>見学・事前相談</h4><p>墓地の見学・事前のご相談は随時承っています。お気軽にお問い合わせください（要予約）。</p></div>
+      </div>
+      <div class="kuyo-note"><p><strong>墓地に関するお問い合わせ</strong><br>現在分譲中の区画については、直接お寺までお問い合わせください。見学も随時受け付けております。</p></div>
+    </div>
+    <!-- 法要 -->
+    <div class="tab-panel" id="tab-hoyo">
+      <p style="text-align:center;color:var(--muted);font-size:1rem;margin-bottom:2rem;">臨済宗南禅寺派の作法にのっとった葬儀・各種法要を執り行います。<br>突然のことでも丁寧にご対応いたします。</p>
+      <div class="kuyo-grid">
+        <div class="kuyo-card"><div class="kuyo-icon">🕯️</div><h4>葬儀</h4><p>臨済宗南禅寺派の作法にのっとった葬儀を執り行います。突然のことでも丁寧にご対応いたします。</p></div>
+        <div class="kuyo-card"><div class="kuyo-icon">📖</div><h4>年忌法要</h4><p>一周忌・三回忌・七回忌など年忌法要、初盆・お盆法要、月命日の読経など各種法要を承ります。</p></div>
+        <div class="kuyo-card"><div class="kuyo-icon">✍️</div><h4>戒名授与</h4><p>故人にふさわしい戒名をお授けします。生前戒名のご相談も承っております。</p></div>
+      </div>
+      <div class="kuyo-note"><p>法要・葬儀に関するご相談は、お電話・LINE・メールにてご相談を承っております。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== お問い合わせ ===== -->
+<!-- ===== よくあるご質問 ===== -->
+<section id="faq">
+  <div class="inner">
+    <div class="section-header fade">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title">よくあるご質問</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="faq-list fade">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">檀家でなくてもお墓や供養をお願いできますか？</button>
+        <div class="faq-a"><p>樹木葬・永代供養墓については、入檀の義務はございません。宗派を問わずご利用いただけます。一般墓地についてはお問い合わせの上、個別にご案内いたします。まずはお気軽にご相談ください。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">生前に永代供養の申し込みはできますか？</button>
+        <div class="faq-a"><p>はい、生前のご予約・お申し込みも承っております。ご自身の意思でご準備いただくことができますので、ご安心ください。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">遠方に住んでいますが管理できますか？</button>
+        <div class="faq-a"><p>永代供養・樹木葬は、当院が永代にわたり管理・供養いたします。遠方にお住まいの方、後継者がいない方にも安心してご利用いただけます。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">見学はできますか？</button>
+        <div class="faq-a"><p>はい、境内・墓地・永代供養塔のご見学は随時承っております。事前にお電話またはフォームよりご予約の上お越しください。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="inner">
+    <div class="section-header fade">
+      <span class="section-label">CONTACT</span>
+      <h2 class="section-title">お問い合わせ</h2>
+      <div class="section-line"></div>
+    </div>
+    <p class="contact-lead fade">法要・葬儀のご相談、墓地・納骨のお問い合わせ、坐禅会へのご参加など、<br>お気軽にご連絡ください。通常、2〜3営業日以内にご返信いたします。</p>
+    <div class="contact-grid fade">
+      <dl class="contact-info">
+        <dt>所在地</dt><dd>〒193-0933<br>東京都八王子市山田町1560</dd>
+        <dt>電話</dt><dd><a href="tel:0426617310" style="color:var(--gold);">042-661-7310</a></dd>
+        <dt>FAX</dt><dd>042-661-7332</dd>
+        <dt>LINE</dt>
+        <dd>
+          <a href="https://line.me/R/ti/p/@679uhivj" target="_blank" rel="noopener noreferrer" class="line-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.07 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+            LINE でお問い合わせ
+          </a>
+        </dd>
+      </dl>
+      <div>
+        <form id="cform" novalidate>
+          <div class="fg"><label class="fl">お名前 <span class="req">必須</span></label><input type="text" id="f-name" name="お名前" placeholder="山田 太郎" autocomplete="name"><span class="ferr" id="e-name">お名前を入力してください</span></div>
+          <div class="fg"><label class="fl">メールアドレス <span class="req">必須</span></label><input type="email" id="f-email" name="メールアドレス" placeholder="example@email.com" autocomplete="email"><span class="ferr" id="e-email">正しいメールアドレスを入力してください</span></div>
+          <div class="fg"><label class="fl">電話番号 <span class="opt">任意</span></label><input type="tel" id="f-phone" name="電話番号" placeholder="000-000-0000" autocomplete="tel"></div>
+          <div class="fg"><label class="fl">ご用件 <span class="req">必須</span></label>
+            <select id="f-cat" name="ご用件"><option value="" disabled selected>選択してください</option><option>法要・葬儀のご相談</option><option>墓地・納骨のご相談</option><option>永代供養のご相談</option><option>樹木葬のご相談</option><option>戒名授与のご相談</option><option>坐禅会・写経会への参加</option><option>見学・境内のご案内</option><option>その他</option></select>
+            <span class="ferr" id="e-cat">ご用件を選択してください</span></div>
+          <div class="fg"><label class="fl">お問い合わせ内容 <span class="req">必須</span></label><textarea id="f-msg" name="お問い合わせ内容" placeholder="ご質問・ご相談内容をご記入ください"></textarea><span class="ferr" id="e-msg">お問い合わせ内容を入力してください</span></div>
+          <button type="submit" class="fsub">送 信 す る</button>
+        </form>
+        <div class="fsuc" id="fsuc"><div class="fsuc-bar"><h3>お問い合わせを受け付けました</h3><p>2〜3営業日以内にご返信いたします。今しばらくお待ちください。</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== アクセス ===== -->
+<section id="access">
+  <div class="inner">
+    <div class="section-header fade">
+      <span class="section-label">ACCESS</span>
+      <h2 class="section-title">アクセス</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="access-grid">
+      <dl class="access-info fade">
+        <dt>寺院名</dt><dd>兜率山 西笑院</dd>
+        <dt>宗派</dt><dd>臨済宗南禅寺派</dd>
+        <dt>所在地</dt><dd>〒193-0933<br>東京都八王子市山田町1560</dd>
+        <dt>電話</dt><dd>042-661-7310</dd>
+        <dt>FAX</dt><dd>042-661-7332</dd>
+        <dt>電車でお越しの方</dt>
+        <dd>
+          京王高尾線「山田駅」より徒歩約11分<br>
+          京王高尾線「めじろ台駅」より徒歩約12分<br>
+          JR・京王「八王子駅」よりタクシーで約10分
+        </dd>
+        <dt>バスでお越しの方</dt>
+        <dd>
+          西八王子駅南口 → 法政大学行 →「めじろ台1丁目」下車 徒歩約5分<br>
+          八王子駅南口 → 八90 めじろ台行 →「山田駅」下車 徒歩約8分
+        </dd>
+        <dt>お車でお越しの方</dt>
+        <dd>
+          圏央道「高尾山IC」より約15分<br>
+          中央道「八王子IC」より約15分<br>
+          境内駐車場あり
+        </dd>
+      </dl>
+      <div class="map-wrap fade">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1621.9611583515853!2d139.31443180000002!3d35.64666340000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60191c261fa37aa1%3A0x6900ce00befc0140!2z6KW_56yR6Zmi!5e1!3m2!1sja!2sjp!4v1779536335028!5m2!1sja!2sjp" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="西笑院 地図"></iframe>
+        <a href="https://maps.app.goo.gl/9y6JbUMW8GaUdBDy5" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;margin-top:.6rem;font-size:.72rem;letter-spacing:.12em;color:var(--gold);">Googleマップで開く ↗</a>
+      </div>
+    </div>
+    <div class="fade" style="margin-top:2.5rem;">
+      <p style="font-size:.72rem;letter-spacing:.18em;color:var(--gold);margin-bottom:.8rem;">駐車場</p>
+      <img src="IMG_4212.jpeg" alt="西笑院 駐車場" onclick="openLightbox(this.src)" style="max-width:280px;width:100%;height:180px;object-fit:cover;border-radius:2px;cursor:pointer;display:block;transition:opacity .2s;" onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">
+      <p style="font-size:.72rem;color:var(--muted);margin-top:.5rem;">クリックで拡大</p>
+      <p style="font-size:.78rem;color:var(--muted);margin-top:.4rem;">※境内西側に第二駐車場（5台程度）もございます</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== フッター ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-logo">兜率山　西笑院</p>
+        <p class="footer-sub">TOSSOTSUZAN SEISHO-IN ／ 臨済宗南禅寺派 廣園寺塔頭</p>
+        <p>〒193-0933<br>東京都八王子市山田町1560<br>TEL：042-661-7310<br>FAX：042-661-7332</p>
+      </div>
+      <div class="footer-col">
+        <h4>ご供養・お墓</h4>
+        <a href="#kuyo" onclick="switchTab('jumoku')">樹木葬</a>
+        <a href="#kuyo" onclick="switchTab('eitai')">永代供養「薫風」</a>
+        <a href="#kuyo" onclick="switchTab('bochi')">墓地・お墓</a>
+        <a href="#kuyo" onclick="switchTab('hoyo')">法要・葬儀</a>
+      </div>
+      <div class="footer-col">
+        <h4>お寺について</h4>
+        <a href="#history">歴史</a>
+        <a href="#gallery">境内のご案内</a>
+        <a href="#events">年間行事</a>
+        <a href="#access">アクセス</a>
+        <a href="#contact">お問い合わせ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="https://line.me/R/ti/p/@679uhivj" target="_blank" rel="noopener noreferrer" class="footer-line-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        LINE でお問い合わせ
+      </a>
+      <p class="footer-copy">&copy; 兜率山 西笑院. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // 歴史アコーディオン
+  function toggleHistory() {
+    const expand = document.getElementById('historyExpand');
+    const btn    = document.getElementById('historyToggle');
+    const isOpen = expand.classList.toggle('open');
+    btn.textContent = isOpen ? '閉じる ↑' : '歴史の全容を読む ↓';
+  }
+  document.getElementById('historyToggle').addEventListener('click', toggleHistory);
+
+  // ヒーロー背景
+  (function() {
+    var imgs = [
+      { src: 'seishouin-home.jpg', pos: 'center', mobilePos: '65% center' },
+      { src: 'home3.jpg',          pos: 'center', mobilePos: 'center' },
+      { src: 'home6.png',          pos: '90% center', mobilePos: '55% center' },
+      { src: 'sekihi2.jfif',       pos: 'center', mobilePos: '20% center' }
+    ];
+    var isMobile = window.innerWidth < 768;
+    var item = imgs[Math.floor(Math.random() * imgs.length)];
+    var bg = document.querySelector('.hero-bg');
+    bg.style.background = "linear-gradient(160deg,rgba(10,10,10,.55) 0%,rgba(10,10,10,.25) 60%,rgba(10,10,10,.5) 100%),url('" + item.src + "')";
+    bg.style.backgroundSize = 'cover';
+    bg.style.backgroundPosition = isMobile ? item.mobilePos : item.pos;
+  })();
+
+  // ハンバーガー
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileNav.classList.toggle('open'); });
+  function closeMenu() { hamburger.classList.remove('open'); mobileNav.classList.remove('open'); }
+
+  // ライトボックス（prev/next対応）
+  const lightbox        = document.getElementById('lightbox');
+  const lightboxImg     = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxClose   = document.getElementById('lightboxClose');
+  const lightboxPrev    = document.getElementById('lightboxPrev');
+  const lightboxNext    = document.getElementById('lightboxNext');
+  const galleryImgs     = Array.from(document.querySelectorAll('.gallery-scroll .gallery-item img'));
+  function scrollGallery(dir) {
+    document.getElementById('galleryScroll').scrollBy({ left: dir * 380, behavior: 'smooth' });
+  }
+  let currentIdx = 0;
+  function setLightboxImg(img) {
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightboxCaption.textContent = img.dataset.caption || '';
+  }
+  function openLightbox(idx) {
+    if (typeof idx === 'number') {
+      currentIdx = idx;
+      setLightboxImg(galleryImgs[idx]);
+      lightboxPrev.style.display = '';
+      lightboxNext.style.display = '';
+    } else {
+      lightboxImg.src = idx;
+      lightboxCaption.textContent = '';
+      lightboxPrev.style.display = 'none';
+      lightboxNext.style.display = 'none';
+    }
+    lightbox.classList.add('open');
+  }
+  function moveLightbox(dir) {
+    currentIdx = (currentIdx + dir + galleryImgs.length) % galleryImgs.length;
+    setLightboxImg(galleryImgs[currentIdx]);
+  }
+  lightboxPrev.addEventListener('click', e => { e.stopPropagation(); moveLightbox(-1); });
+  lightboxNext.addEventListener('click', e => { e.stopPropagation(); moveLightbox(1); });
+  document.querySelectorAll('.event-photo img').forEach(img => {
+    img.addEventListener('click', () => openLightbox(img.src));
+  });
+  lightboxClose.addEventListener('click', () => lightbox.classList.remove('open'));
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') lightbox.classList.remove('open');
+    if (e.key === 'ArrowLeft')  moveLightbox(-1);
+    if (e.key === 'ArrowRight') moveLightbox(1);
+  });
+
+  // FAQ アコーディオン
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !isOpen);
+      btn.nextElementSibling.classList.toggle('open', !isOpen);
+    });
+  });
+
+  // ナビアクティブハイライト
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  const sections = Array.from(navLinks).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector('nav a[href="#' + entry.target.id + '"]');
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(s => navObserver.observe(s));
+
+  // タブ切り替え
+  function switchTab(tabName) {
+    const sec = document.getElementById('kuyo');
+    sec.querySelectorAll('.tab-btn').forEach(b => { b.classList.toggle('active', b.dataset.tab === tabName); });
+    sec.querySelectorAll('.tab-panel').forEach(p => { p.classList.toggle('active', p.id === 'tab-' + tabName); });
+  }
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => switchTab(btn.dataset.tab));
+  });
+
+  // フェードイン
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+
+  // スクロールでヘッダー影
+  const header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    header.style.boxShadow = window.scrollY > 40 ? '0 2px 12px rgba(0,0,0,.08)' : '';
+  });
+
+  // トップへ戻るボタン
+  const totop = document.getElementById('totop');
+  window.addEventListener('scroll', () => { totop.classList.toggle('show', window.scrollY > 400); });
+  totop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // フォーム
+  const form = document.getElementById('cform');
+  const fsuc = document.getElementById('fsuc');
+  function setErr(id, errId, show) { document.getElementById(id).classList.toggle('err', show); document.getElementById(errId).classList.toggle('on', show); }
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const name  = document.getElementById('f-name').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    const cat   = document.getElementById('f-cat').value;
+    const msg   = document.getElementById('f-msg').value.trim();
+    const ok    = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    setErr('f-name','e-name',!name); setErr('f-email','e-email',!ok); setErr('f-cat','e-cat',!cat); setErr('f-msg','e-msg',!msg);
+    if (name && ok && cat && msg) {
+      fetch('https://formspree.io/f/xojbqbrr', { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
+        .then(res => { if (res.ok) { form.style.display = 'none'; fsuc.classList.add('on'); } });
+    }
+  });
+  ['f-name','f-email','f-cat','f-msg'].forEach(id => {
+    document.getElementById(id).addEventListener('input', function() {
+      if (!this.classList.contains('err')) return;
+      this.classList.remove('err');
+      const el = document.getElementById('e-' + id.replace('f-',''));
+      if (el) el.classList.remove('on');
+    });
+  });
+</script>
+</body>
+</html>
