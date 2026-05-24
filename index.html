@@ -955,9 +955,13 @@
     if (typeof idx === 'number') {
       currentIdx = idx;
       setLightboxImg(galleryImgs[idx]);
+      lightboxPrev.style.display = '';
+      lightboxNext.style.display = '';
     } else {
       lightboxImg.src = idx;
       lightboxCaption.textContent = '';
+      lightboxPrev.style.display = 'none';
+      lightboxNext.style.display = 'none';
     }
     lightbox.classList.add('open');
   }
