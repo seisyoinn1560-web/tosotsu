@@ -486,21 +486,39 @@
 </section>
 
 <!-- ===== お知らせ ===== -->
+<!--
+  【お知らせの更新方法】※HTMLタグは一切触りません
+  1. GitHubのリポジトリ画面で、同じ場所にある news.txt を開き、右上の鉛筆アイコン（Edit）をクリック
+  2. 1行が「日付|本文」の形式になっています。新しいお知らせは一番上に1行追加してください
+     例）2026.09|秋彼岸法要のご案内を掲示いたしました。
+  3. 古いお知らせを消したい場合は、その行を削除する
+  4. 画面下の「Commit changes...」ボタンを押せば、数分後に本番サイトに反映されます
+-->
 <div id="news-bar">
   <div class="news-bar-inner">
     <span class="news-bar-label">お知らせ</span>
-    <div class="news-list">
-      <div class="news-item">
-        <span class="news-date">2026.05</span>
-        <span class="news-text">ホームページを開設いたしました。</span>
-      </div>
-      <div class="news-item">
-        <span class="news-date">随時</span>
-        <span class="news-text">各種仏事のご相談承っております。</span>
-      </div>
-    </div>
+    <div class="news-list" id="news-list"></div>
   </div>
 </div>
+<script>
+(function(){
+  fetch('news.txt')
+    .then(function(res){ return res.text(); })
+    .then(function(text){
+      var lines = text.split('\n').map(function(l){ return l.trim(); }).filter(Boolean);
+      var html = lines.map(function(line){
+        var idx = line.indexOf('|');
+        if (idx === -1) return '';
+        var date = line.slice(0, idx).trim();
+        var body = line.slice(idx + 1).trim();
+        return '<div class="news-item"><span class="news-date">' + date +
+               '</span><span class="news-text">' + body + '</span></div>';
+      }).join('');
+      document.getElementById('news-list').innerHTML = html;
+    })
+    .catch(function(){ /* news.txtが読めない場合は何も表示しない */ });
+})();
+</script>
 
 <!-- ===== 歴史 ===== -->
 <section id="history">
@@ -695,6 +713,7 @@
       <div class="event-item fade"><div class="event-month">4月8日</div><div><div class="event-name">花まつり（降誕会）</div><div class="event-desc">お釈迦様のご誕生をお祝いする日。</div></div></div>
       <div class="event-item fade"><div class="event-month">7月</div><div><div class="event-name">盂蘭盆</div><div class="event-desc">先祖をお迎えするお盆の法要。丁寧にご案内します。</div></div></div>
       <div class="event-item fade"><div class="event-month">9月</div><div><div class="event-name">秋彼岸</div><div class="event-desc">秋分の日を中心とした七日間。先祖の霊を偲び、心静かに手を合わせます。</div></div></div>
+      <div class="event-item fade"><div class="event-month">10月</div><div><div class="event-name">当山施餓鬼会</div><div class="event-desc">餓鬼道に苦しむ諸霊に施しを行い、供養する法要です。</div></div></div>
       <div class="event-item fade"><div class="event-month">12月8日</div><div><div class="event-name">成道会</div><div class="event-desc">お釈迦様がお悟りを開かれた日。</div></div></div>
       <div class="event-item fade"><div class="event-month">坐禅会</div><div><div class="event-name">坐禅会</div><div class="event-desc">準備出来次第、開催予定です。詳細はお問い合わせください。</div></div></div>
     </div>
