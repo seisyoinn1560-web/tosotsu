@@ -500,7 +500,7 @@
      例）2026.09｜秋彼岸法要のご案内を掲示いたしました。
      詳しいご案内ページ等にリンクさせたい場合は、末尾に「｜URL」を追加してください（省略可）
      例）2026.09｜秋彼岸法要のご案内を掲示いたしました｜https://seishouin.jp/#events
-     ※「随時｜…」の行は特別扱いで、常に一番下（最後）に固定表示されます。削除・編集は自由です
+     ※「随時｜…」の行は特別扱いで、常に一番上に固定表示されます。削除・編集は自由です
   3. 古いお知らせを消したい場合は、その行を削除する
   4. 画面下の「Commit changes...」ボタンを押せば、数分後に本番サイトに反映されます
 -->
@@ -529,7 +529,7 @@
 
       var pinned = items.filter(function(it){ return it.date === '随時'; });
       var dated = items.filter(function(it){ return it.date !== '随時'; }).reverse();
-      var ordered = dated.concat(pinned);
+      var ordered = pinned.concat(dated);
 
       var html = ordered.map(function(it, i){
         var textHtml = it.url
