@@ -144,10 +144,12 @@
     .news-bar-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: baseline; gap: 1.2rem; flex-wrap: wrap; }
     .news-bar-label { font-size: .62rem; letter-spacing: .3em; color: var(--gold); white-space: nowrap; }
     .news-list { display: flex; flex-direction: column; gap: .3rem; flex: 1; }
-    .news-item { display: flex; align-items: baseline; gap: .8rem; font-size: .82rem; }
-    .news-item.news-hidden { display: none; }
+    .news-item { display: flex; align-items: baseline; gap: .8rem; font-size: .82rem; max-height: 2.2em; opacity: 1; overflow: hidden; transition: max-height .35s ease, opacity .3s ease, margin .35s ease; }
+    .news-item.news-hidden { max-height: 0; opacity: 0; margin: 0; pointer-events: none; }
     .news-date { font-size: .7rem; color: var(--muted); white-space: nowrap; }
     .news-text { color: var(--ink); }
+    .news-text a { color: inherit; text-decoration: none; border-bottom: 1px dotted var(--gold); transition: color .2s, border-color .2s; }
+    .news-text a:hover { color: var(--gold); }
     .news-toggle { background: none; border: none; cursor: pointer; font-size: .72rem; color: var(--gold); letter-spacing: .05em; padding: .2rem 0; text-align: left; align-self: flex-start; }
     .news-toggle:hover { text-decoration: underline; }
 
@@ -495,6 +497,8 @@
   2. 1行が「日付｜本文」の形式になっています。新しいお知らせは一番上に1行追加してください
      区切り記号は半角「|」でも全角「｜」でもどちらでも読み込めます
      例）2026.09｜秋彼岸法要のご案内を掲示いたしました。
+     詳しいご案内ページ等にリンクさせたい場合は、末尾に「｜URL」を追加してください（省略可）
+     例）2026.09｜秋彼岸法要のご案内を掲示いたしました｜https://seishouin.jp/#events
   3. 古いお知らせを消したい場合は、その行を削除する
   4. 画面下の「Commit changes...」ボタンを押せば、数分後に本番サイトに反映されます
 -->
@@ -514,12 +518,16 @@
       var html = lines.map(function(line, i){
         var sep = line.indexOf('|') !== -1 ? '|' : (line.indexOf('｜') !== -1 ? '｜' : null);
         if (sep === null) return '';
-        var idx = line.indexOf(sep);
-        var date = line.slice(0, idx).trim();
-        var body = line.slice(idx + 1).trim();
+        var parts = line.split(sep).map(function(s){ return s.trim(); });
+        var date = parts[0];
+        var body = parts[1] || '';
+        var url = parts[2] || '';
+        var textHtml = url
+          ? '<a href="' + url.replace(/"/g, '&quot;') + '">' + body + '</a>'
+          : body;
         var hiddenClass = (i >= VISIBLE_COUNT) ? ' news-hidden' : '';
         return '<div class="news-item' + hiddenClass + '"><span class="news-date">' + date +
-               '</span><span class="news-text">' + body + '</span></div>';
+               '</span><span class="news-text">' + textHtml + '</span></div>';
       }).join('');
       var extraCount = lines.length - VISIBLE_COUNT;
       if (extraCount > 0) {
