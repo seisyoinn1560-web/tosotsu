@@ -144,7 +144,7 @@
     .news-bar-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: baseline; gap: 1.2rem; flex-wrap: wrap; }
     .news-bar-label { font-size: .62rem; letter-spacing: .3em; color: var(--gold); white-space: nowrap; }
     .news-list { display: flex; flex-direction: column; gap: .3rem; flex: 1; }
-    .news-item { display: flex; align-items: baseline; gap: .8rem; font-size: .82rem; max-height: 2.2em; opacity: 1; overflow: hidden; transition: max-height .35s ease, opacity .3s ease, margin .35s ease; }
+    .news-item { display: flex; align-items: baseline; gap: .8rem; font-size: .82rem; max-height: 6em; opacity: 1; overflow: hidden; transition: max-height .35s ease, opacity .3s ease, margin .35s ease; }
     .news-item.news-hidden { max-height: 0; opacity: 0; margin: 0; pointer-events: none; }
     .news-date { font-size: .7rem; color: var(--muted); white-space: nowrap; }
     .news-text { color: var(--ink); }
@@ -412,7 +412,7 @@
 
     /* ===== レスポンシブ ===== */
     @media (max-width: 900px) { nav { display: none; } .header-tel { display: none; } .hamburger { display: flex; } }
-    @media (max-width: 768px) { section { padding: 4.5rem 6%; } .priest-card { flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; } .priest-photo { width: 140px; height: 170px; } .event-item { grid-template-columns: 60px 1fr; } }
+    @media (max-width: 768px) { section { padding: 4.5rem 6%; } .priest-card { flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; } .priest-photo { width: 140px; height: 170px; } .event-item { grid-template-columns: 60px 1fr; } .news-item { flex-direction: column; gap: .1rem; } }
     @media (max-width: 480px) { .hero-title { letter-spacing: .12em; } }
   </style>
 </head>
