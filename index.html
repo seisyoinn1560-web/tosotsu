@@ -145,8 +145,11 @@
     .news-bar-label { font-size: .62rem; letter-spacing: .3em; color: var(--gold); white-space: nowrap; }
     .news-list { display: flex; flex-direction: column; gap: .3rem; flex: 1; }
     .news-item { display: flex; align-items: baseline; gap: .8rem; font-size: .82rem; }
+    .news-item.news-hidden { display: none; }
     .news-date { font-size: .7rem; color: var(--muted); white-space: nowrap; }
     .news-text { color: var(--ink); }
+    .news-toggle { background: none; border: none; cursor: pointer; font-size: .72rem; color: var(--gold); letter-spacing: .05em; padding: .2rem 0; text-align: left; align-self: flex-start; }
+    .news-toggle:hover { text-decoration: underline; }
 
     /* ===== セクション共通 ===== */
     section { padding: 6rem 5%; }
@@ -506,15 +509,34 @@
     .then(function(res){ return res.text(); })
     .then(function(text){
       var lines = text.split('\n').map(function(l){ return l.trim(); }).filter(Boolean);
-      var html = lines.map(function(line){
+      var VISIBLE_COUNT = 3;
+      var html = lines.map(function(line, i){
         var idx = line.indexOf('|');
         if (idx === -1) return '';
         var date = line.slice(0, idx).trim();
         var body = line.slice(idx + 1).trim();
-        return '<div class="news-item"><span class="news-date">' + date +
+        var hiddenClass = (i >= VISIBLE_COUNT) ? ' news-hidden' : '';
+        return '<div class="news-item' + hiddenClass + '"><span class="news-date">' + date +
                '</span><span class="news-text">' + body + '</span></div>';
       }).join('');
+      var extraCount = lines.length - VISIBLE_COUNT;
+      if (extraCount > 0) {
+        html += '<button type="button" class="news-toggle" aria-expanded="false">＋ もっと見る（あと' + extraCount + '件）</button>';
+      }
       document.getElementById('news-list').innerHTML = html;
+      var toggleBtn = document.querySelector('.news-toggle');
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', function(){
+          var isOpen = toggleBtn.getAttribute('aria-expanded') === 'true';
+          document.querySelectorAll('#news-list .news-item').forEach(function(item, i){
+            if (i >= VISIBLE_COUNT) item.classList.toggle('news-hidden', isOpen);
+          });
+          toggleBtn.setAttribute('aria-expanded', !isOpen);
+          toggleBtn.textContent = isOpen
+            ? '＋ もっと見る（あと' + extraCount + '件）'
+            : '－ 閉じる';
+        });
+      }
     })
     .catch(function(){ /* news.txtが読めない場合は何も表示しない */ });
 })();
