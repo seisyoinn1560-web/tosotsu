@@ -492,8 +492,9 @@
 <!--
   【お知らせの更新方法】※HTMLタグは一切触りません
   1. GitHubのリポジトリ画面で、同じ場所にある news.txt を開き、右上の鉛筆アイコン（Edit）をクリック
-  2. 1行が「日付|本文」の形式になっています。新しいお知らせは一番上に1行追加してください
-     例）2026.09|秋彼岸法要のご案内を掲示いたしました。
+  2. 1行が「日付｜本文」の形式になっています。新しいお知らせは一番上に1行追加してください
+     区切り記号は半角「|」でも全角「｜」でもどちらでも読み込めます
+     例）2026.09｜秋彼岸法要のご案内を掲示いたしました。
   3. 古いお知らせを消したい場合は、その行を削除する
   4. 画面下の「Commit changes...」ボタンを押せば、数分後に本番サイトに反映されます
 -->
@@ -511,8 +512,9 @@
       var lines = text.split('\n').map(function(l){ return l.trim(); }).filter(Boolean);
       var VISIBLE_COUNT = 3;
       var html = lines.map(function(line, i){
-        var idx = line.indexOf('|');
-        if (idx === -1) return '';
+        var sep = line.indexOf('|') !== -1 ? '|' : (line.indexOf('｜') !== -1 ? '｜' : null);
+        if (sep === null) return '';
+        var idx = line.indexOf(sep);
         var date = line.slice(0, idx).trim();
         var body = line.slice(idx + 1).trim();
         var hiddenClass = (i >= VISIBLE_COUNT) ? ' news-hidden' : '';
