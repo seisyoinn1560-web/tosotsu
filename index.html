@@ -518,15 +518,15 @@
       var rawLines = text.split('\n').map(function(l){ return l.trim(); }).filter(Boolean);
       var VISIBLE_COUNT = 3;
 
-      // 各行を{date, body, url}に分解（「随時」は常に最後に固定表示、
-      // それ以外はファイルの下に書くほどサイトの上に表示されるよう並び順を反転する）
+      // 各行を{date, body, url}に分解（区切り記号は半角|・全角｜のどちらでも同じ扱い）
       var items = rawLines.map(function(line){
-        var sep = line.indexOf('|') !== -1 ? '|' : (line.indexOf('｜') !== -1 ? '｜' : null);
-        if (sep === null) return null;
-        var parts = line.split(sep).map(function(s){ return s.trim(); });
+        var parts = line.split(/[|｜]/).map(function(s){ return s.trim(); });
+        if (parts.length < 2) return null;
         return { date: parts[0], body: parts[1] || '', url: parts[2] || '' };
       }).filter(Boolean);
 
+      // 「随時」は件数制限の対象外で常に一番上に固定表示。
+      // それ以外はファイルの下に書くほどサイトの上に表示されるよう並び順を反転する
       var pinned = items.filter(function(it){ return it.date === '随時'; });
       var dated = items.filter(function(it){ return it.date !== '随時'; }).reverse();
       var ordered = pinned.concat(dated);
@@ -535,21 +535,23 @@
         var textHtml = it.url
           ? '<a href="' + it.url.replace(/"/g, '&quot;') + '">' + it.body + '</a>'
           : it.body;
-        var hiddenClass = (i >= VISIBLE_COUNT) ? ' news-hidden' : '';
+        var datedIndex = i - pinned.length;
+        var hiddenClass = (datedIndex >= VISIBLE_COUNT) ? ' news-hidden' : '';
         return '<div class="news-item' + hiddenClass + '"><span class="news-date">' + it.date +
                '</span><span class="news-text">' + textHtml + '</span></div>';
       }).join('');
-      var extraCount = ordered.length - VISIBLE_COUNT;
+      var extraCount = dated.length - VISIBLE_COUNT;
       if (extraCount > 0) {
         html += '<button type="button" class="news-toggle" aria-expanded="false">＋ もっと見る（あと' + extraCount + '件）</button>';
       }
       document.getElementById('news-list').innerHTML = html;
       var toggleBtn = document.querySelector('.news-toggle');
       if (toggleBtn) {
+        var showThreshold = pinned.length + VISIBLE_COUNT;
         toggleBtn.addEventListener('click', function(){
           var isOpen = toggleBtn.getAttribute('aria-expanded') === 'true';
           document.querySelectorAll('#news-list .news-item').forEach(function(item, i){
-            if (i >= VISIBLE_COUNT) item.classList.toggle('news-hidden', isOpen);
+            if (i >= showThreshold) item.classList.toggle('news-hidden', isOpen);
           });
           toggleBtn.setAttribute('aria-expanded', !isOpen);
           toggleBtn.textContent = isOpen
