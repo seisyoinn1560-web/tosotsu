@@ -307,6 +307,8 @@
     .fsuc-bar { border-left: 3px solid var(--gold); padding-left: 1.2rem; }
     .fsuc h3 { font-size: 1rem; color: var(--ink); margin-bottom: .5rem; letter-spacing: .1em; font-weight: 400; }
     .fsuc p { font-size: .82rem; color: var(--muted); }
+    .fsend-err { display: none; margin-top: 1rem; padding: 1rem 1.2rem; border-left: 3px solid #a02020; background: rgba(160,32,32,.05); font-size: .82rem; color: #a02020; }
+    .fsend-err.on { display: block; }
     .line-btn { display: inline-flex; align-items: center; gap: .5rem; padding: .65rem 1.5rem; background: #06C755; color: #fff; border-radius: 4px; font-size: .85rem; letter-spacing: .1em; margin-top: .5rem; transition: background .2s; font-family: inherit; }
     .line-btn:hover { background: #05a648; color: #fff; }
 
@@ -894,6 +896,7 @@
             <span class="ferr" id="e-cat">ご用件を選択してください</span></div>
           <div class="fg"><label class="fl">お問い合わせ内容 <span class="req">必須</span></label><textarea id="f-msg" name="お問い合わせ内容" placeholder="ご質問・ご相談内容をご記入ください"></textarea><span class="ferr" id="e-msg">お問い合わせ内容を入力してください</span></div>
           <button type="submit" class="fsub">送 信 す る</button>
+          <div class="fsend-err" id="fsend-err">送信に失敗しました。お手数ですが時間をおいて再度お試しいただくか、お電話にてお問い合わせください。</div>
         </form>
         <div class="fsuc" id="fsuc"><div class="fsuc-bar"><h3>お問い合わせを受け付けました</h3><p>2〜3営業日以内にご返信いたします。今しばらくお待ちください。</p></div></div>
       </div>
@@ -1016,6 +1019,7 @@
   const mobileNav = document.getElementById('mobileNav');
   hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileNav.classList.toggle('open'); });
   function closeMenu() { hamburger.classList.remove('open'); mobileNav.classList.remove('open'); }
+  window.addEventListener('resize', () => { if (window.innerWidth > 900) closeMenu(); });
 
   // ライトボックス（prev/next対応）
   const lightbox        = document.getElementById('lightbox');
@@ -1029,6 +1033,7 @@
     document.getElementById('galleryScroll').scrollBy({ left: dir * 380, behavior: 'smooth' });
   }
   let currentIdx = 0;
+  let inGalleryMode = false;
   function setLightboxImg(img) {
     lightboxImg.src = img.src;
     lightboxImg.alt = img.alt;
@@ -1036,12 +1041,15 @@
   }
   function openLightbox(idx) {
     if (typeof idx === 'number') {
+      inGalleryMode = true;
       currentIdx = idx;
       setLightboxImg(galleryImgs[idx]);
       lightboxPrev.style.display = '';
       lightboxNext.style.display = '';
     } else {
+      inGalleryMode = false;
       lightboxImg.src = idx;
+      lightboxImg.alt = '';
       lightboxCaption.textContent = '';
       lightboxPrev.style.display = 'none';
       lightboxNext.style.display = 'none';
@@ -1049,6 +1057,7 @@
     lightbox.classList.add('open');
   }
   function moveLightbox(dir) {
+    if (!inGalleryMode || galleryImgs.length === 0) return;
     currentIdx = (currentIdx + dir + galleryImgs.length) % galleryImgs.length;
     setLightboxImg(galleryImgs[currentIdx]);
   }
@@ -1060,6 +1069,7 @@
   lightboxClose.addEventListener('click', () => lightbox.classList.remove('open'));
   lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });
   document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('open')) return;
     if (e.key === 'Escape') lightbox.classList.remove('open');
     if (e.key === 'ArrowLeft')  moveLightbox(-1);
     if (e.key === 'ArrowRight') moveLightbox(1);
@@ -1128,8 +1138,16 @@
     const ok    = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     setErr('f-name','e-name',!name); setErr('f-email','e-email',!ok); setErr('f-cat','e-cat',!cat); setErr('f-msg','e-msg',!msg);
     if (name && ok && cat && msg) {
+      const errBox = document.getElementById('fsend-err');
+      const submitBtn = form.querySelector('.fsub');
+      errBox.classList.remove('on');
+      submitBtn.disabled = true;
       fetch('https://formspree.io/f/xojbqbrr', { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
-        .then(res => { if (res.ok) { form.style.display = 'none'; fsuc.classList.add('on'); } });
+        .then(res => {
+          if (res.ok) { form.style.display = 'none'; fsuc.classList.add('on'); }
+          else { errBox.classList.add('on'); submitBtn.disabled = false; }
+        })
+        .catch(() => { errBox.classList.add('on'); submitBtn.disabled = false; });
     }
   });
   ['f-name','f-email','f-cat','f-msg'].forEach(id => {
