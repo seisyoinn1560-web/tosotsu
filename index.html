@@ -494,11 +494,13 @@
 <!--
   【お知らせの更新方法】※HTMLタグは一切触りません
   1. GitHubのリポジトリ画面で、同じ場所にある news.txt を開き、右上の鉛筆アイコン（Edit）をクリック
-  2. 1行が「日付｜本文」の形式になっています。新しいお知らせは一番上に1行追加してください
+  2. 1行が「日付｜本文」の形式になっています。新しいお知らせは一番下に1行追加してください
+     （ファイルの下に書くほど、サイトでは自動的に上に表示されます）
      区切り記号は半角「|」でも全角「｜」でもどちらでも読み込めます
      例）2026.09｜秋彼岸法要のご案内を掲示いたしました。
      詳しいご案内ページ等にリンクさせたい場合は、末尾に「｜URL」を追加してください（省略可）
      例）2026.09｜秋彼岸法要のご案内を掲示いたしました｜https://seishouin.jp/#events
+     ※「随時｜…」の行は特別扱いで、常に一番下（最後）に固定表示されます。削除・編集は自由です
   3. 古いお知らせを消したい場合は、その行を削除する
   4. 画面下の「Commit changes...」ボタンを押せば、数分後に本番サイトに反映されます
 -->
@@ -513,23 +515,31 @@
   fetch('news.txt')
     .then(function(res){ return res.text(); })
     .then(function(text){
-      var lines = text.split('\n').map(function(l){ return l.trim(); }).filter(Boolean);
+      var rawLines = text.split('\n').map(function(l){ return l.trim(); }).filter(Boolean);
       var VISIBLE_COUNT = 3;
-      var html = lines.map(function(line, i){
+
+      // 各行を{date, body, url}に分解（「随時」は常に最後に固定表示、
+      // それ以外はファイルの下に書くほどサイトの上に表示されるよう並び順を反転する）
+      var items = rawLines.map(function(line){
         var sep = line.indexOf('|') !== -1 ? '|' : (line.indexOf('｜') !== -1 ? '｜' : null);
-        if (sep === null) return '';
+        if (sep === null) return null;
         var parts = line.split(sep).map(function(s){ return s.trim(); });
-        var date = parts[0];
-        var body = parts[1] || '';
-        var url = parts[2] || '';
-        var textHtml = url
-          ? '<a href="' + url.replace(/"/g, '&quot;') + '">' + body + '</a>'
-          : body;
+        return { date: parts[0], body: parts[1] || '', url: parts[2] || '' };
+      }).filter(Boolean);
+
+      var pinned = items.filter(function(it){ return it.date === '随時'; });
+      var dated = items.filter(function(it){ return it.date !== '随時'; }).reverse();
+      var ordered = dated.concat(pinned);
+
+      var html = ordered.map(function(it, i){
+        var textHtml = it.url
+          ? '<a href="' + it.url.replace(/"/g, '&quot;') + '">' + it.body + '</a>'
+          : it.body;
         var hiddenClass = (i >= VISIBLE_COUNT) ? ' news-hidden' : '';
-        return '<div class="news-item' + hiddenClass + '"><span class="news-date">' + date +
+        return '<div class="news-item' + hiddenClass + '"><span class="news-date">' + it.date +
                '</span><span class="news-text">' + textHtml + '</span></div>';
       }).join('');
-      var extraCount = lines.length - VISIBLE_COUNT;
+      var extraCount = ordered.length - VISIBLE_COUNT;
       if (extraCount > 0) {
         html += '<button type="button" class="news-toggle" aria-expanded="false">＋ もっと見る（あと' + extraCount + '件）</button>';
       }
