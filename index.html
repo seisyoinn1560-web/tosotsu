@@ -128,7 +128,9 @@
     .hero-content { position: relative; color: var(--white); padding: 0 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
     .hero-main { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; }
     .hero-right { position: absolute; left: 100%; top: 0; margin-left: -.8rem; display: flex; flex-direction: row; gap: .2rem; align-items: center; opacity: 0; animation: fadeUp 1.2s .5s forwards; }
+    .hero-tossotsu-wrap { display: flex; flex-direction: column; align-items: center; }
     .hero-tossotsu { font-size: 1.9rem; letter-spacing: .35em; color: rgba(255,255,255,.88); writing-mode: vertical-rl; }
+    .hero-tossotsu-romaji { font-size: .62rem; letter-spacing: .2em; color: rgba(255,255,255,.6); margin-top: .5rem; }
     .hero-label { font-size: 1.2rem; letter-spacing: .3em; color: rgba(255,255,255,.65); writing-mode: vertical-rl; }
     .hero-title-wrap { display: flex; flex-direction: column; align-items: center; opacity: 0; animation: fadeUp 1.2s .55s forwards; }
     .hero-kamon { width: 52px; height: 52px; object-fit: contain; filter: invert(1); mix-blend-mode: screen; display: block; margin-bottom: .6rem; opacity: 0; animation: fadeUp 1.2s .3s forwards; }
@@ -517,7 +519,10 @@
         <p class="hero-romaji">SEISHO-IN</p>
       </div>
       <div class="hero-right">
-        <p class="hero-tossotsu">兜率山</p>
+        <div class="hero-tossotsu-wrap">
+          <p class="hero-tossotsu">兜率山</p>
+          <p class="hero-tossotsu-romaji">TOSSOTSUZAN</p>
+        </div>
         <p class="hero-label">臨済宗南禅寺派</p>
       </div>
     </div>
