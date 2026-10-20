@@ -90,8 +90,12 @@
     .logo-sub  { font-size: .56rem; letter-spacing: .15em; color: var(--gold); }
     .header-right { display: flex; align-items: center; gap: 2rem; }
     .header-tel {
-      display: flex; flex-direction: column; align-items: flex-end;
+      display: flex; flex-direction: column; align-items: flex-end; gap: .4rem;
       font-size: .72rem; letter-spacing: .05em; color: var(--muted); line-height: 1.4;
+    }
+    .header-tel-badge {
+      display: inline-block; background: var(--gold); color: #fff;
+      font-size: .66rem; letter-spacing: .08em; padding: .25rem .7rem; border-radius: 3px;
     }
     .header-tel-row { display: flex; align-items: center; gap: .7rem; }
     .header-tel a { font-size: 1.1rem; letter-spacing: .06em; color: var(--ink); font-weight: 600; }
@@ -458,7 +462,7 @@
       <a href="#access">アクセス</a>
     </nav>
     <div class="header-tel">
-      <span>お気軽にご相談ください</span>
+      <span class="header-tel-badge">お気軽にご相談ください</span>
       <div class="header-tel-row">
         <a href="tel:0426617310">042-661-7310</a>
         <a href="https://line.me/R/ti/p/@679uhivj" target="_blank" rel="noopener noreferrer" class="header-line">
