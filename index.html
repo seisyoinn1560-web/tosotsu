@@ -114,7 +114,13 @@
     .mobile-nav { display: none; flex-direction: column; position: fixed; top: var(--nav-h); left: 0; width: 100%; background: #fff; border-bottom: 1px solid var(--border); z-index: 99; }
     .mobile-nav.open { display: flex; }
     .mobile-nav a { padding: 1rem 8%; font-size: .9rem; letter-spacing: .1em; color: var(--ink); border-bottom: 1px solid var(--border); }
-    .mobile-nav .mob-tel { padding: .8rem 8%; font-size: .85rem; color: var(--gold); font-weight: 600; letter-spacing: .08em; border-bottom: 1px solid var(--border); }
+    .mob-contact { padding: 1.1rem 8% 1.3rem; }
+    .mob-contact-label { display: block; font-size: .78rem; color: var(--gold); letter-spacing: .08em; margin-bottom: .9rem; }
+    .mob-contact-row { display: flex; align-items: center; gap: 2.2rem; }
+    .mob-contact-tel, .mob-contact-line { display: inline-flex; align-items: center; gap: .4rem; padding-bottom: .7rem; border-bottom: 1px solid var(--border); color: var(--ink); font-weight: 600; }
+    .mob-contact-tel { font-size: 1.15rem; letter-spacing: .04em; }
+    .mob-contact-line { font-size: .85rem; letter-spacing: .04em; }
+    .mob-contact-line svg { flex-shrink: 0; }
 
     /* ===== ヒーロー ===== */
     #hero { height: 100svh; min-height: 600px; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
@@ -479,13 +485,25 @@
 </header>
 
 <div class="mobile-nav" id="mobileNav">
-  <span class="mob-tel">📞 042-661-7310</span>
   <a href="#history"   onclick="closeMenu()">歴史</a>
   <a href="#gallery"   onclick="closeMenu()">境内のご案内</a>
   <a href="#events"    onclick="closeMenu()">年間行事</a>
   <a href="#kuyo"      onclick="closeMenu()">お墓・供養</a>
   <a href="#contact"   onclick="closeMenu()">お問い合わせ</a>
   <a href="#access"    onclick="closeMenu()">アクセス</a>
+  <div class="mob-contact">
+    <span class="mob-contact-label">お気軽にご相談ください</span>
+    <div class="mob-contact-row">
+      <a href="tel:0426617310" class="mob-contact-tel">042-661-7310</a>
+      <a href="https://line.me/R/ti/p/@679uhivj" target="_blank" rel="noopener noreferrer" class="mob-contact-line">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="#06C755" d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.07 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+          <text x="12" y="11.5" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="6.5" font-weight="700" fill="#fff">LINE</text>
+        </svg>
+        LINE
+      </a>
+    </div>
+  </div>
 </div>
 
 <!-- ===== ヒーロー ===== -->
